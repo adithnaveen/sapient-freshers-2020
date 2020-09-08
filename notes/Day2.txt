@@ -1,0 +1,233 @@
+Day 2 
+
+MongoDB
+RedisDB
+CassandraDB
+CouchDB
+MemDB
+Dont Use SQL - NoSQL (tomorrow)
+
+MySQL DBMS 
+Oracle DBMS 
+DB2 DBMS 
+Postgres DBMS 
+SQL - 
+
+A - Atomicity 
+C - Consitency 
+I - Isolated 
+D - Durable 
+
+select * from emp; 
+
+~1000 - Oracle 
+~900 - MySql 
+~900 - Postgres 
+
+SAPHANA 
+
+
+
+
+Highly Cohesive - Loosely Coupled System 
+
+1972 - EF Codd 
+DB2 
+Postgres 
+
+SQL 
+What to do ? 
+Java/.net/C/C++ 
+How to do ? 
+
+
+
+(normalize)
+SQL 
+
+	DDL - Data Defination Language 
+		Create 
+		Alter
+		Drop
+		Truncate
+>  psql -U postgres -h localhost <enter>
+> create database sapdb20;
+> \l - list all the databases and roles 
+> \c <dbname> - connect to the specified DB 
+> \dt - to list the tables in the DB 
+> \s - get the history 
+> \g - to execute previous command 
+> \timing (to on or off timing )
+> \e (to edit the command and execute)
+
+
+> create table dept(
+	deptid int primary key, 
+	dname varchar(25) not null, 
+	location varchar(30)
+ ); 
+
+
+> create table employee(
+	empid int primary key, 
+	empname varchar(30) not null, 
+	empemail varchar(40), 
+	deptid int, 
+	foreign key (deptid) references dept(deptid)
+);
+
+ADD, DROP, MODIFY 
+
+> alter table employee add column designation varchar(20) not null; 
+> alter table employee add check (designation <> ''); 
+
+-- to have the contraint on the empemail to be unique 
+
+> alter table employee add constraint empemail_uq unique (empemail); 
+> alter table employee drop constraint empemail_uq; 
+
+
+> alter table employee drop column designation; 
+
+9999.23
+> alter table employee add column empsal int; 
+
+9999999.99
+numeric(9,2) 
+
+> alter table employee alter column empsal type numeric(6,2); 
+-- rename the column in the table 
+> alter table employee rename column empsal to esal; 
+
+> create table project(
+	projectid int primary key, 
+	projectname varchar(30)
+); 
+
+
+
+
+
+
+
+		
+	DML - Data Manipulation Language 
+		Insert 
+			-- to dept table 
+			
+			insert into dept values(10, 'Accounts', 'Bengaluru'); 
+			> insert into dept (deptid, dname) values (20, 'Finance'), (30, 'Development');
+		
+		
+		-- insert 4 records in employee table 
+		
+		> insert into employee (empid,empname, empemail,deptid, designation, esal)
+			values (101, 'Dhruv', 'dhruv@sapient.com', 10, 'SE', 1234), 
+			(102, 'Mukul', 'Mukul@sapient.com', 10, 'TL', 2233),
+			(103, 'Jyotsana', 'Jyotsana@sapient.com', 10, 'SSE', 2345), 
+			(104, 'Shrut', 'Shrut@sapient.com', 10, 'PM', 3322); 
+	 		
+		Update 
+			> update dept set location = 'Delhi' where deptid=20; 
+			> update dept set location = 'Chennai' where deptid=30;
+		Delete 
+			> delete from employee where empid =101; 
+			
+	DQL - Data Query Langue 
+		Select 
+		
+		syntax 
+		
+			select [column/s * ] 
+				from table1, table2, table 3
+				[where [condition or/and conditions]]
+				[group by [column/s]]
+				[having [conditon/s]]
+				[order by column/s asc/desc]; 
+		
+		> select * from employee; 
+		> select e.empname, e.empemail, e.esal, d.dname 
+			from employee e,  dept d
+			where e.deptid = d.deptid and 
+				e.esal > 2300; 
+		
+		>  insert into employee (empid,empname, empemail,deptid, designation, esal)
+			values (105, 'Abhimanyu', 'Abhimanyu@pb.com', 20, 'SE', 3334), 
+			(106, 'chandan', 'chandan@pb.com', 20, 'TL', 4343);
+		
+		
+		> select * from employee where empemail like '%sapient%'; 
+		
+		
+	 list all the employee who are working in Delhi , Bengaluru 
+		select e.empname, e.empemail, e.esal, d.dname 
+					from   dept d, employee e
+					where d.deptid = e.deptid 
+					and d.location in ('Delhi', 'Bengaluru'); 
+					
+		> explain (costs) select * from dept; 			
+		
+		> create index on employee (empname); 
+
+max, min, count, avg, sum
+
+> select min(esal), max(esal), deptid from employee 
+	group by deptid
+	having min(esal) > 2300
+	order by deptid; 
+
+
+
+> select min(esal), max(esal), deptid from employee 
+	group by deptid
+	order by deptid; 
+
+
+// list all the employee of each dept who are getting the salary more than 
+// the average salary of the dept 
+
+
+select * from employee order by esal limit 3 offset 2;
+
+
+
+		
+	TCL - Transaction Control Language 
+		Commit 
+		Rollback
+		Savepoint 
+		
+	DCL - Data Control Language 
+		Grant 
+		Revoke 
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
