@@ -1,0 +1,18 @@
+package com.training.basics;
+
+import org.apache.log4j.ConsoleAppender;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class HelloWorld {
+	
+	
+	static Logger logger = LoggerFactory.getLogger(HelloWorld.class); 
+	
+	
+	public static void main(String[] args) {
+		org.apache.log4j.Logger.getLogger(HelloWorld.class).addAppender(new ConsoleAppender());
+		logger.info("Hi This is from info");
+		logger.debug("This is from Debug");
+	}
+}

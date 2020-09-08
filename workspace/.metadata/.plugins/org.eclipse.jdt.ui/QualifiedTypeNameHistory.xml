@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.apache.log4j.Logger"/>
+    <fullyQualifiedTypeName name="com.training.basics.HelloWorld"/>
+    <fullyQualifiedTypeName name="org.apache.log4j.ConsoleAppender"/>
+    <fullyQualifiedTypeName name="org.apache.log4j.BasicConfigurator"/>
+</qualifiedTypeNameHistroy>

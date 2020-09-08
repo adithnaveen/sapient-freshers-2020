@@ -1,0 +1,128 @@
+Abhimanju - btech mech, python, nodejs, html css, aws 
+Akashdeep - DTU, CS, Node React, python, C++, AWS 
+ashutosh - DTU, C++, python 
+Chandan - NIT Warangal, CS, c++, python, learning java, 
+Dada - NIT, E&C, C++, DB SQL, HTML 
+Dhruv Agarval - IIT, Guhuvati, Chemical engg, c++, python, jsp servlets 
+Divyansh - IIT BHU, mining engg, java, typescript, python, nodejs 
+Garvit - BITS Hyd, CS, oops, C++, C, Python 
+Gaurav - IIT, Btech Electrical,c++, java, javascript, nodejs angular 
+Harsh - Btech IIT Roorkey, checmical engg, java, reactjs, c++ 
+Ishika - NSIT, BE I&T, java python, c++, basics android 
+Pranavika - NIT Warangal, BE EC, C++, Java 
+Karan - BITS pilani CS  C++, python 
+Mukul - IIT Mandi, BTech Electrical Engg, React Redux 
+Namit - IIT Hyd, C++, java, python, tensor flow 
+Rishab - IITK, java & nodejs 
+saiteja - nit warangal e&c, java, c++, html css 
+Shashank - bits goa, chemical engg, c++, aws, react, nlp, 
+shrut - IIT bombay, engg physics, 
+Suresh - NIT warangal, CS, BE, c++ java, web dev 
+Uday - nit warangal, ece c++ java php mysql 
+Vishal - iitk, CS, c++, java 
+jyotsana - NSIT Delhi, CS, C++, pjp(java)
+
+
+
+GIT
+> git add 
+> git commit -m "hello"
+> git push origin <branch> 
+> git branch -a 
+> git branch <branchn_name> 
+> git rm  
+> git checkout <branch_name> 
+> git status 
+> git log 
+> git log --oneline 
+> git log --oneline --grep "string"
+> git remote -v 
+> git remote add <url> 
+> git remote delete <url> 
+
+
+
+MAVEN
+	java 
+	maven 
+	maven multi module 
+	 
+	 
+	 
+	 
+	 /Users/naveenkumar/.m2/repository/org/slf4j/slf4j-api/1.7.25/slf4j-api-1.7.25.jar
+	
+	
+	
+log4j 
+logback
+slf4j 
+
+public class HelloWorld  {
+	public static void main(String [] args) {
+		System.out.println("hi"); 
+	 
+	}
+}
+
+
+
+
+JENKINS 
+	groovy 
+
+
+
+
+
+
+
+
+A.java
+B.java
+C.java 
+> javac -d . *.java 
+> java InvokerFile
+
+
+
+
+
+Attlasian 
+Confluence 
+JIRA 
+BitBucket 
+
+
+
+Software list 
+Java 11
+Eclipse 
+	E
+	G
+	H
+	I
+	J
+	K
+	L
+	M
+	N
+	O
+	P
+Git Bash 
+Maven 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
