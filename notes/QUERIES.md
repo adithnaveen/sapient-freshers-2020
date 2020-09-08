@@ -96,3 +96,43 @@ Write a query to display the last name, job, and salary for all employees whose 
 Write a query to display the last name of employees whose names have exactly 6 characters.
 
 Write a query to display the last name of employees having 'e' as the third character.
+
+Write a query to display the jobs/designations available in the employees table.
+
+Write a query to display the name (first_name, last_name), salary and PF (15% of salary) of all employees.
+
+Write a query to select all record from employees where last name in 'BLAKE', 'SCOTT', 'KING' and 'FORD'.
+
+Write a query to list the number of jobs available in the employees table.
+
+Write a query to get the total salaries payable to employees.
+
+Write a query to get the minimum salary from employees table.
+
+Write a query to get the maximum salary of an employee working as a Programmer.
+
+Write a query to get the average salary and number of employees working the department 90.
+
+Write a query to get the highest, lowest, sum, and average salary of all employees.
+
+Write a query to get the number of employees with the same job.
+
+Write a query to get the difference between the highest and lowest salaries.
+
+Write a query to find the manager ID and the salary of the lowest-paid employee for that manager.
+
+Write a query to get the department ID and the total salary payable in each department.
+
+Write a query to get the average salary for each job ID excluding programmer.
+
+Write a query to get the total salary, maximum, minimum, average salary of employees (job ID wise), for department ID 90 only.
+
+Write a query to get the job ID and maximum salary of the employees where maximum salary is greater than or equal to $4000.
+
+Write a query to get the average salary for all departments employing more than 10 employees.
+
+Write a query to find the name (first_name, last_name) and the salary of the employees who have a higher salary than the employee whose last_name='Bull'.
+
+Write a query to find the name (first_name, last_name) of all employees who works in the IT department.
+
+Write a query to find the name (first_name, last_name) of the employees who have a manager and worked in a USA based department. (Hint : Write single-row and multiple-row subqueries)
