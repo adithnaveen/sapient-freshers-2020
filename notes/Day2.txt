@@ -81,6 +81,10 @@ ADD, DROP, MODIFY
 > alter table employee add column designation varchar(20) not null; 
 > alter table employee add check (designation <> ''); 
 
+for manager 
+> alter table employee add column mgr int; 
+
+
 -- to have the contraint on the empemail to be unique 
 
 > alter table employee add constraint empemail_uq unique (empemail); 
@@ -189,7 +193,62 @@ max, min, count, avg, sum
 
 select * from employee order by esal limit 3 offset 2;
 
+self join 
+e 
+empid    empname 	mgr 
+101		    A		null 
+102			B		 101
+103			C		 101
 
+m 
+empid    empname 	mgr 
+101		    A		null 
+102			B		 101
+103			C		 101
+
+
+Mr A reports to "noBody"
+Mr B reports to A 
+Mr C reports to A 
+
+
+self join 
+> select e.empname, m.empname 
+	from employee e, employee m 
+	where m.empid = e.mgr; 
+
+
+
+outer join 
+	left outer join 
+	right outer join 
+
+> select e.empname, e.empemail, d.dname
+	from employee e left outer join dept d on e.deptid = d.deptid; 
+
+> select e.empname, e.empemail, d.dname
+	from employee e right outer join dept d on e.deptid = d.deptid; 
+
+> select e.empname, e.empemail, d.dname
+	from dept d left outer join employee e on e.deptid = d.deptid; 
+
+> select e.empname, e.empemail, d.dname, p.projectname 
+	from employee e, dept d, project p 
+	e.deptid = d.deptid and e.prjid = p.prjid 
+	and p.prjid = (select prjid from project where projectname='App dev')
+	
+
+
+
+
+
+
+
+
+
+
+
+	
 
 		
 	TCL - Transaction Control Language 
