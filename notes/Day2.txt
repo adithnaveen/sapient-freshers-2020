@@ -239,7 +239,8 @@ outer join
 	
 
 
-
+1. data set - github 
+2. the queries needed 
 
 
 

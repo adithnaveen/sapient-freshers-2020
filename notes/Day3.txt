@@ -1,0 +1,245 @@
+Day 3 
+
+Join  is the way to extract data from the table 
+min 2 table 
+
+
+select t1.fieled1, t1.field2, t2.field1, t2.field2 
+	from table t1, table t2 
+	where t1.commonfiled = t2.commonfield; 
+	
+	
+select e.empname, e.empsal, d.dname
+	from emp e, dept d
+	where e.deptid = d.deptid; 
+	
+
+	
+select e.empname, e.empsal, d.dname
+	from emp e, dept d
+	on e.deptid = d.deptid; 
+	
+
+
+
+
+
+MongoDB
+RedisDB
+CassandraDB
+CouchDB
+MemDB
+Dont Use SQL - NoSQL (tomorrow)
+
+joins 
+emp (50000)
+	empid 
+	empname
+	empsal
+	empemail
+
+addres (50000)
+	empHno
+	empstreet
+	empcity
+	empstate
+	emppin 
+
+
+dept (400)
+
+
+project (30)
+
+
+jobs (24)
+
+jobs_history  (100)
+
+
+
+
+
+
+ 
+rows - columns - DBMS 
+
+row - record - tuple - (Document)
+column - project - (field)
+
+JSON 
+{} - object 
+[{},{},{}]- array 
+
+key-value 
+
+scalar type 
+JSON - Data Model 
+
+{
+	empid:101, 
+	empname:"Chandan", 
+	empsal:12345, 
+	emphno: 123,
+	address:  {
+		empstreet:"One Loudon", 
+		empzip:560045, 
+		empstate:"KA"
+	}
+}
+
+{
+	empname:"Ashutosh", 
+	empsal:3322, 
+	emphno: 1223343,
+	address:  {}
+		empstreet:"Stevens Creek Blvd", 
+		empzip:560044, 
+		empstate:"MA"
+	}
+}
+ 
+ 
+create table emp(
+empid int, 
+empname varchar(30), 
+dob date ; 
+
+)
+ 
+ c:\data\db 
+ /data/db 
+> mongod --port 27017  --dbpath /somefolder/somefolder/somefolder/
+
+> show databases;
+> use sapdb;
+
+Insert/save 
+
+
+object={}
+> db.emps.insert(object)
+> db.emps.insert({})
+> db.emps.insert({empid:101,empname:'Gaurav', dept:'dev', email:'gaurav@ps.com'}); 
+
+> db.emps.find();
+
+>  db.createCollection("newcoll")
+// FIFO 
+> db.createCollection("capcol", {capped:true, size:1024, max:4}); 
+
+> db.capcol.insert({id:101, place:"blr"})
+db.capcol.insert({id:102, place:"blr"})
+db.capcol.insert({id:103, place:"blr"})
+db.capcol.insert({id:104, place:"blr"})
+db.capcol.insert({id:105, place:"blr"})
+db.capcol.insert({id:107, place:"blr"})
+
+
+
+$ mongoimport --host localhost --port 27017 --db sapdb --collection emps --file emps.json --jsonArray
+
+
+/users/jyotsna 
+> mongoimport --host localhost --port 27017 --db sapdb --collection emps --file emps.json
+> mongoexport --host localhost --db sapdb --collection emps --out output_1.json -f "empname"
+> mongoexport --host localhost --db sapdb --collection emps --out output.csv -f "_id,empname" --type csv
+
+
+Update
+Delete
+Select 
+
+
+// {selection}, {projection}
+
+> db.emps.find({empid:101}, {_id:0, dept:0})
+
+> db.emps.find({empid:{$gt:203}}, {_id:0, dept:0})
+> db.emps.find({empid:{$gt:203}}, {_id:0, dept:0}).sort({empname:1, empid:-1})
+
+-- and 
+> db.emps.find(
+	{empid:{$gt:203}, empname:"Namit"}, 
+	{_id:0, dept:0}).sort({empname:1, empid:-1}).explain("executionStats"); 
+	
+-- or 
+>  db.emps.find({$or:[
+		{empid:{$gt:300}}, 
+		{email:{$exists:true}} 
+	]});
+
+-- and / or both 
+
+-- embedded document 
+db.embedded.insert({
+	empid:101, 
+	empname:"Garvit", 
+	empsal:12345, 
+	address: {
+		hno:123, 
+		street:"American Dream Way", 
+		city:"Reston", 
+		state:"VA"
+		}
+})
+
+db.embedded.insert({
+	empid:102, 
+	empname:"Rishab", 
+	empsal:3345, 
+	address: {
+		hno:223, 
+		street:"Sunset Hills", 
+		city:"Ash Burn", 
+		state:"VA"
+		}
+})
+
+db.embedded.find({"address.city":"Reston"})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+> db.emps.find({email:{$exists:true}});
+
+import/Export 
+
+indexdes 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+
+
+
+
+
+
+
+
