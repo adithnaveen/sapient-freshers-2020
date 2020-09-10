@@ -2,13 +2,13 @@ package com.training.games;
 
 import com.training.games.exception.PlayersRequiredException;
 
-public class OfflineGames extends Game {
+public abstract class OfflineGames extends Game {
 	private int dimensionLength;
 	private int dimensionBredth; 
 	private String [] equipments;
 	
-	public OfflineGames() {
-	}
+//	public OfflineGames() {
+//	}
 	
 	public OfflineGames(int dimensionLength,
 			 	int dimensionBredth, 
@@ -35,22 +35,7 @@ public class OfflineGames extends Game {
 		System.out.println
 		("you have to be in front of person");
 	}
-
-	@Override
-	public void start() {
-		 System.out.println("in offline - to start shake hands.. ");
-	}
-
-	@Override
-	public void stop() {
-		 System.out.println("in offline - to stop shake hands..");
-	}
-
-	@Override
-	public void rule() {
-		 System.out.println("offline game you have to meet the partner..");
-	}
-	
+ 
 	
 	
 }

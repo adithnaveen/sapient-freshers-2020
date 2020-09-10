@@ -157,8 +157,61 @@ name(){
 	check throw error 
 }
 	
+
+1. add player class
+2. have proper contract 
+3. leader board 
+4. Exception - (no of players)
+5. enums / interfaces for constants 
+ 
+ 
+class - Noun - Object 
+	concrete, abstract 
+	abstract class can have concrete method
+	single or multi level inheritence (exactly 1 parent)
+	you can create an object (concrete)
+
+class ClassName{
+	you have 4 access specifiers public private producted default 
+}
+interface - Rules - they dont inherit from objec 
+ 	only abstract 
+ 	cannot have concrete method 
+ 	multiple / single / multi level inheritence (more parent)
+ 	you cannot create an object 
+	these are used for rules 
+
+interface InterfaceName {
+	no variable only constant 
+	min / max access specifier is public 
+}
 	
-	
+
+class extends class 
+class implements interface/s 
+interface extend interface or interfaces 
+interface neither extends or implments class 
+
+ 
+class Human{} 
+class Account{}
+class Window{}
+interface Sort{}
+ 
+ 
+class Human extedns Animal implements Sort {
+	// all the methods of the sort to be overriden 
+}
+ 
+
+class PhiplsBulb{}
+class GEBlub{}
+class SyskaBlub{}
+ 
+ 
+ 
+ 
+ 
 	
 	
 	
