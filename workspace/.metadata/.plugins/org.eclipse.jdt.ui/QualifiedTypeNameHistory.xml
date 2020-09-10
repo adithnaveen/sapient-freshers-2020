@@ -6,4 +6,15 @@
     <fullyQualifiedTypeName name="com.training.basics.HelloWorld"/>
     <fullyQualifiedTypeName name="org.apache.log4j.ConsoleAppender"/>
     <fullyQualifiedTypeName name="org.apache.log4j.BasicConfigurator"/>
+    <fullyQualifiedTypeName name="java.lang.Override"/>
+    <fullyQualifiedTypeName name="com.training.games.Game"/>
+    <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
+    <fullyQualifiedTypeName name="com.training.games.PlayersRequiredException"/>
+    <fullyQualifiedTypeName name="com.training.exception.EmployeeMgmt"/>
+    <fullyQualifiedTypeName name="com.training.exception.SalaryTooLessException"/>
+    <fullyQualifiedTypeName name="com.training.exception.NameTooSmallException"/>
+    <fullyQualifiedTypeName name="java.lang.Exception"/>
+    <fullyQualifiedTypeName name="com.training.games.OnlineGames"/>
+    <fullyQualifiedTypeName name="com.training.games.OfflineGames"/>
+    <fullyQualifiedTypeName name="com.training.games.PlayGame"/>
 </qualifiedTypeNameHistroy>

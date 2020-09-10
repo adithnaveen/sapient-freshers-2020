@@ -25,13 +25,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="org.review"/>
 		</list>
 		<list key="groupId">
-			<item value="com.training"/>
 		</list>
 		<list key="artifactId">
-			<item value="review"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -52,6 +49,7 @@
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="java-works"/>
 			<item value="review"/>
 			<item value="first-multi-module-project"/>
 			<item value="message"/>

@@ -1,0 +1,168 @@
+inheritence 
+polymorphism 
+Abstraction 
+Encapsulation 
+
+
+Vehicle 
+Employee 
+Banking
+Airline 
+
+
+Games 
+	player 
+	start 
+	stop 
+	
+
+online games 
+	account 
+	region 
+
+	poker 
+	Card 
+	racing 
+	Action 
+	
+offline 
+	playground 
+	equipment 
+	
+	
+	chess 
+	carrom 
+	cricket 	
+	
+--------------------------------------	
+	indoor 
+	outdoor
+--------------------------------------
+is-a - heirarchy (super-child)
+has-a - Genralization  	
+	
+	
+Games 
+	player - int 
+	start - method 
+	stop - method 
+	rule - method 
+	
+online games 
+	account - username (srtring)
+	region 	- string 
+	
+offline 
+	playground - dimension 
+	equipment - [string]
+	
+	
+class Object {} 
+
+class Game {
+	Game() {}
+	Game(player) {}
+}
+
+class OnlineGame extends Game {
+	OnlineGame(player){
+	 	super(player)
+	 }
+} -> implicity class OnlineGame extends Object {}
+
+OnlineGame oGame = new OnlineGame(); 
+	
+
+
+Class Pascal Case 
+	OnlineGames (onlinegame)
+method and variable - camel case 
+	viewBalance 
+	viewBalanceForEmployee
+package - all in lower case 
+com.something.somepackage.somesubpackage 
+constants - all in upper case 
+double PI = 3.14;
+long CAPACITY = 2334L; 
+
+ 
+ 
+ noOfPlayer; - camel case 
+ getxxxxx - getNoOfPlayer()
+ setxxxxx - setNoOfPlayer()
+
+
+
+
+
+
+
+
+
+
+
+Arithmetic 
+10/0 
+System.exit(1); 
+
+
+Games 
+
+
+					Throwable 
+					
+					
+		Error 					Excpetion 
+									RunTime 
+									
+							Checked Exception  (Exception) - Java does not know 
+							File f = new File("hello.txt"); 
+							FileWriter fw = new FileWriter(f); 
+							fw.createNewFile(); 
+								IOException 
+								
+							File f = new File("hello.txt"); 
+							FileReader fw = new FileReader(f);
+								FileNotFoundException 
+								
+							Game 
+								NameTooSmallException 
+								IOException 
+								CloneNotSupportedException 
+								SQLException 
+								
+								
+								
+							Un-checked Exception  (RunTimeException)
+								(Falls under JVM)
+							10/0 - ArithmeticException 
+							int [] arr = new int [-4];  - NegativeArrayException
+							int arr[5]; arr[50]=100; 
+								ArrayIndexOutOfBoundsException 
+							int x  = Intger.parseInt("10a");
+								 NumberFormatException 
+
+
+
+
+
+main (){
+	salary();
+}
+
+salary() {
+	name(); 
+}
+name(){
+	check throw error 
+}
+	
+	
+	
+	
+	
+	
+	
+	
+
+
