@@ -2,4 +2,5 @@ bin/**
 **/db-space/**
 **/.metadata/**
 *.class
+**/assessments/**
 
