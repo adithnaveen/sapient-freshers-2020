@@ -21,4 +21,9 @@
     <fullyQualifiedTypeName name="com.training.games.specific.OnlineCriket"/>
     <fullyQualifiedTypeName name="com.training.games.specific.OfflineCricket"/>
     <fullyQualifiedTypeName name="com.training.util.Games"/>
+    <fullyQualifiedTypeName name="java.lang.Comparable"/>
+    <fullyQualifiedTypeName name="java.util.Arrays"/>
+    <fullyQualifiedTypeName name="com.training.interfaces.Devices"/>
+    <fullyQualifiedTypeName name="java.util.Comparator"/>
+    <fullyQualifiedTypeName name="com.training.interfaces.SortingDevices"/>
 </qualifiedTypeNameHistroy>

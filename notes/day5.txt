@@ -1,0 +1,130 @@
+Day 5 
+
+
+MongoDB 
+Insert 
+Seelect 
+Embedded document 
+
+mongod (server) - mongo (client) 	
+		db.emps.find({}).limit(5).skip(4).sort({empname:1}); 
+		
+to extract only the fields which i need, programatically 
+//itr is read only, forward only, one way 
+
+var itr=db.emps.find({empname:{$exists:true}});
+while(itr.hasNext()){
+	var temp=itr.next(); 
+	print(temp.empname.toUpperCase()); 
+}
+
+
+-- create a collection which will contain empname(upper case) 
+from emps 
+
+var itr=db.emps.find({empname:{$exists:true}});
+while(itr.hasNext()){
+	var temp=itr.next(); 
+	db.emp_fin.insert({empname:temp.empname.toUpperCase()}); 
+}
+
+db.feedback.insert({name:"mouse", ratings:[5,6,7]})
+db.feedback.insert({name:"keyboard", ratings:[8,9]})
+db.feedback.insert({name:"monitor", ratings:[3]})
+db.feedback.insert({name:"laptop", ratings:[3,7,9,10]})
+
+1. find array value any where 
+	db.feedback.find({ratings:9})
+2. find at position 
+	db.feedback.find({'ratings.0':5})
+3. exact match 
+	db.feedback.find({ratings:[5,6,7]})
+4. condition match 
+	$elemMatch
+	db.feedback.find({ratings:{$elemMatch:{$gt:5}}});
+
+
+update 
+
+db.emps.update({"empname" : "Akashdeep"}, {$set:{city:"Mumbai"}}, {multi:true})
+
+upsert 
+db.emps.update({"empname" : "Garvit"}, {$set:{city:"Mumbai"}}, {upsert:true})
+
+
+save 
+db.products.save({_id:ObjectId("5f5afbc264499979195c6d14"), name:"NEW MONITOR", price:1234})
+db.products.save({_id:101, name:"monitor", price:1234, location:"east house"})
+
+remove 
+
+db.products.remove({})
+
+db.emps.remove({empid:{$exists:false}})
+
+indexes 
+
+ db.population.find({pop:{$gt:10000}}).count();
+ db.population.find({pop:{$gt:10000}}).explain("executionStats")
+ db.population.createIndex({pop:1})
+ 
+ db.population.createIndex({pop:1}, {background:true})
+ 
+ db.population.createIndex({pop:-1})
+
+
+
+"size" : 2774134,
+	"count" : 29353,
+	"avgObjSize" : 94,
+	"storageSize" : 1318912,
+
+"totalIndexSize" : 573440,
+	"indexSizes" : {
+		"_id_" : 319488,
+		"pop_1" : 253952
+	},
+
+
+
+{
+	"_id" : "01001",
+	"city" : "AGAWAM",
+	"loc" : [
+		-72.622739,
+		42.070206
+	],
+	"pop" : 15338,
+	"state" : "MA"
+}
+
+db.population.createIndex({city:1, pop:1})
+db.population.createIndex({city:-1, pop:1})
+db.population.createIndex({city:-1, pop:-1})
+db.population.createIndex({city:-1, pop:1})
+
+
+db.population.find({city:"AGAWAM", pop:{$gt:3000}}).explain("executionStats")
+	"indexName" : "city_-1_pop_1", (desc city, asc pop)
+	"indexName" : "city_-1_pop_1",
+	
+
+db.population.find({city:"AGAWAM", pop:{$gt:3000}}).hint({city:1,pop:1}).explain("executionStats")
+
+
+{empid:101, name:"abhimanyu"}
+{ name:"abhimanyu"}
+
+
+db.population.createIndex({loc:'2d', city:1})
+
+db.population.find({loc:{$near:[45,56]}}).limit(5); 
+
+
+
+
+
+
+Interfaces 
+
+Test Cases 
