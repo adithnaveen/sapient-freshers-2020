@@ -3,4 +3,5 @@ bin/**
 **/.metadata/**
 *.class
 **/assessments/**
+**/evaluation/**
 
