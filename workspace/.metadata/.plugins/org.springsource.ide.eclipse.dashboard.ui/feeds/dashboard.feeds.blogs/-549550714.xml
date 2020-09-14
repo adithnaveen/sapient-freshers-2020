@@ -5,7 +5,24 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2020-09-10T23:06:49Z</updated>
+  <updated>2020-09-11T15:00:00Z</updated>
+  <entry>
+    <title>You spoke, we listened: State of Spring 2020 report is here!</title>
+    <link rel="alternate" href="https://spring.io/blog/2020/09/11/you-spoke-we-listened-state-of-spring-2020-report-is-here" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Ben Wilcock</name>
+    </author>
+    <id>tag:spring.io,2020-09-11:4195</id>
+    <updated>2020-09-11T15:00:00Z</updated>
+    <content type="html">&lt;p&gt;&lt;img src="https://github.com/spring-io/spring-io-static/raw/master/blog/bwilcock/20201011/state-of-spring-2020.png" alt="headline" /&gt;&lt;/p&gt;
+&lt;p&gt;Back in July the Spring team asked for your input on a range of Spring-related topics. And wow! What a response!&lt;/p&gt;
+&lt;p&gt;Thank you to the 1024 developers, architects, and managers across the globe that took time out of their day to complete the survey. We’ve crunched the numbers, filtered &amp;amp; mashed up the results to distill the most compelling insights into the State of Spring 2020 report.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://github.com/spring-io/spring-io-static/raw/master/blog/bwilcock/20201011/state-of-spring-2020-key-findings.png" alt="overview" /&gt;&lt;/p&gt;
+&lt;p&gt;Thanks to everyone that completed the survey. We look forward to making this report an annual event, following the growth, success, and evolution of our community.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://tanzu.vmware.com/content/ebooks/state-of-spring-2020"&gt;Download your copy of &amp;lsquo;The State Of Spring 2020&amp;rsquo; NOW!&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>A Bootiful Podcast: Legendary Spring contributor Rossen Stoyanchev on all things web, reactive and RSocket</title>
     <link rel="alternate" href="https://spring.io/blog/2020/09/10/a-bootiful-podcast-legendary-spring-contributor-rossen-stoyanchev-on-all-things-web-reactive-and-rsocket" />
@@ -14,8 +31,8 @@
       <name>Josh Long</name>
     </author>
     <id>tag:spring.io,2020-09-10:4194</id>
-    <updated>2020-09-10T23:06:49Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment of a &lt;em&gt;Bootiful Podcast&lt;/em&gt;, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks about the week that was, his new book &lt;a href="http://ReactiveSpring.io"&gt;&amp;ldquo;Reactive Spring,&amp;rdquo;&lt;/a&gt; and then talks to one of the most senior engineers on the Spring team and a longtime contributor to all things web and reactive - &lt;a href="http://twitter.com/rstoya08"&gt;Rossen Stoyanchev (@rstoya08)&lt;/a&gt;.&lt;/p&gt;
+    <updated>2020-09-10T23:06:00Z</updated>
+    <content type="html">&lt;p&gt;Hi, Spring fans! In this installment of a &lt;em&gt;Bootiful Podcast&lt;/em&gt;, &lt;a href="http://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks about the week that was, his new book &lt;a href="http://ReactiveSpring.io"&gt;&amp;ldquo;Reactive Spring,&amp;rdquo;&lt;/a&gt; and then talks to one of the most senior engineers on the Spring team and a longtime contributor to all things web and reactive - &lt;a href="http://twitter.com/rstoya05"&gt;Rossen Stoyanchev (@rstoya05)&lt;/a&gt;.&lt;/p&gt;
 &lt;iframe title="Legendary Spring contributor Rossen Stoyanchev on all things web, reactive and RSocket " height="122" width="100%" style="border: none;" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/media/player/zisid-eb15e0?from=pb6admin&amp;download=1&amp;version=1&amp;auto=0&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Helvetica&amp;skin=1&amp;pfauth=&amp;btn-skin=107"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
@@ -1848,20 +1865,6 @@ public class ThumbnailStandaloneApplication {
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Initializr 0.9.1 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2020/08/17/spring-initializr-0-9-1-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Stéphane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2020-08-17:4173</id>
-    <updated>2020-08-17T15:36:07Z</updated>
-    <content type="html">&lt;p&gt;On behalf of the team and everyone who has contributed, I’m happy to announce that Spring Initializr 0.9.1 has been released and is now available from repo.spring.io and Maven Central.&lt;/p&gt;
-&lt;p&gt;This release includes &lt;a href="https://github.com/spring-io/initializr/releases/tag/v0.9.1"&gt;2 fixes&lt;/a&gt;. Thanks to all those who have contributed with issue reports and pull requests.&lt;/p&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-io/initializr"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/initializr/issues"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/initializr/docs/0.9.1/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-initializr"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-io/initializr"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>
