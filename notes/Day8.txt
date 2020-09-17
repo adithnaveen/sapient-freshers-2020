@@ -1,0 +1,177 @@
+Dev - API 
+
+Stack s = new Stack(); 
+s.push("hi");
+s.pop(); 
+
+Liner Fashion.  [1,2,3,5,6,8,3,4,56]
+	Array 
+	LinkedList [value, link] -> [value, link] ->[value, NULL]
+		Singly LinkedList
+		Doubly LinkedList 
+	Stack 
+	Queue 
+
+Tree 
+	Binary Search Tree 
+		AVL 
+		Red-Black 
+Graph 
+	
+Sorting 
+	Bubble Sort 
+	Quick Sort 
+	
+	10, 5, 8, 12, 45, 32, 8, 11
+1)	10, 5, 8, 12, 45, 32, 8, 11 
+			  i			  j  
+2)  10 , 5, 8, 8, 45, 32, 12, 11 			  
+			      i	     
+			   j
+3)   8 , 5, 8,  10, 45, 32, 12, 11 	
+
+		8 , 5, 8, 	
+		45, 32, 12, 11 	
+	-------------------------------
+	partion(l, h)  {
+		pivot = a[l]
+		i = l+1; 
+		j = h
+		while(i<j){
+			  
+			while(a[i] <=pivot){
+				i++; 
+			}
+			 
+			while(a[j] >pivot) {
+				j--; 
+			}
+			if(i<j) {
+				swap(a[i], a[j])
+			}
+			
+			swap(a[l], a[j])
+			return j; 
+		}
+	}
+	-------------------------------
+	
+	QuickSort(l, h) {
+		if(l<h) {
+			j = partition(l, h); 
+			quicksort(l, j); 
+			quicksort(j+1, h); 
+		}
+	}
+	
+	
+	-------------------------------
+	
+	Merge Sort 
+Searching 
+	Linear Search 
+	Binary Search 
+
+Hashing Technique 
+	Map 
+
+Storage Type 
+	Abstract Data Type 
+	
+
+---------------------------------------
+class Student {}
+Student []students = new Students[5]; 
+
+class Employee{}
+Employee []emps = new Employee[5]; 
+
+	
+10+20+30+40+50 / 10 
+
+10.5+20.6+30.7+40.7+50.34 / 10 
+
+
+"harsh"+"Jyotsna"+"Mukul"+"Chandan"/4	
+	
+	
+	
+class Emp implements Comparable {}
+class Student implements Comparable {}
+	
+	
+First Fit 
+	mostly allocate = or more 
+Best Fit 
+	allocate what is needed 
+Worst Fit 
+	allocate the data in pieces 
+	
+	
+interface MyInterface {
+	void a(); 
+	void b(); 
+}
+
+class MyAbstractclass implemnets MyInterface{
+	void  abstrct a(); 
+	void b(){
+		// i've 
+	}
+}
+	
+class Util {
+	public void display(MyInterface m) 
+	{
+	
+	}
+}
+class ArrayList extends MyAbstractClass implments MyInterface{
+	void a(){} 
+}
+
+class LinkedList extends MyAbstractClass implments MyInterface{
+	void a(){} 
+	void deleteAtPos(int pos) {}
+}
+
+MyInterface m= new ArrayList (); 
+MyInterface list = new LinkedList() ;
+	
+Linear Search 
+Best  - O(1)
+Worst - O(n)
+Avg - O(n) 
+	
+	
+	
+	
+	
+	
+	
+	main() {
+		hi()
+	}
+	
+	hi() {
+		bye()
+	}
+	
+	bye() {}
+	
+	
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+

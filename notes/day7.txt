@@ -1,0 +1,234 @@
+Object [] objs = new Object[4];
+
+
+objs[0] = new Student(); 
+objs[1] = new Employee(); 
+objs[2]= new Bank(); 
+
+for(Object temp : objs) {
+	???? 
+	if(temp instanceof Student) {
+		
+	}else if(temp instanceof Employee) {
+	
+	}
+}
+
+Abstract Data Type 
+
+which will find average 
+Generic 
+<?> - Object 
+<? extends Number>
+<? super Carrom> 
+
+Collection 
+
+
+
+int 
+float 
+double 
+short 
+String 
+Employee 
+
+
+
+public void play(Game game) {
+	game.start(); 
+	game.stop(); 
+	
+	// never give you compile time problem 
+	// 100% run time problem 
+	((OfflineGame)game).shakeHands()
+
+	if(game instanceof OnlineGame) {
+	
+	} else if(game instanceof OfflineGame) {
+	
+	}
+}
+
+
+Vector 
+- are sync 
+- the object will be pooled 
+
+OLTP - Online Transaction Processing 
+OLAP - Online Analytical Processing 
+	
+LinkedList and Stack 
+Queue q = new LinkedList() ; 
+
+
+
+12, 34, 66, 77, 23, 43, 55, 55 
+
+12 - O(1)  
+77 - O(log n)
+55 - O(n)
+100 - O(n) 
+
+HashSet - will keep in un-ordered way 
+TreeSet - Ordered Way 
+LinkedHashSet - in the insertion order 
+
+
+
+our own dictionary 
+
+flat file (file reader / writer)
+
+Accept String - Hello 
+	Hello 
+		Hello-English, Namaskara-Kannada, Namaste-Hindi
+	GoogMorning
+		Good Morining, Shubodaya, Shuboday 
+	
+	put it in a file 
+
+BufferedReader -Enter a word 
+
+Hello=Hello,Namaskara,Namste 
+StringTokenizer, spitIterator 
+
+
+Map<String, List<String>> 
+
+
+
+
+
+
+
+CreditCard Transaction Processor 
+
+.csv (10,00,000)
+transactionxxxx.csv 
+db 
+3rd party 
+	some json server 
+	https://www.mockaroo.com/ (mock)
+	ESB - Kafka 
+	https://www.kaggle.com/
+
+Processing 
+MyDB - MongoDB 
+10k / sec 
+
+
+how do we identify faulty transaction 
+
+
+
+
+Admin Module 
+	Microservice  (Dev + Testing)
+	DB (MD5 )
+	Loggers 
+	ELK 
+	Kafka (TLS)
+	UI React (Dev + Testing)
+	Testing (e2e)
+	DevOps 
+	Jenkins 
+	DEV - VPN 
+	AWS - Cloud (security )
+	JWT - HTTPS (SSL)
+	UI (P-P Encryption)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Dashboard for Customer 
+	a. amount spent 
+	b. customer profile 
+	c. view transaction
+	d. perform transaction(???)
+2. how data looks like 
+3. how do we validate the data in the input resource 
+4. will the data come only from csv / API 
+5. will Customer have 1 CC or multiple 
+6. keep the snap shot of the account 
+7. is there some maths involved (like interest calculation/rewards) - no 
+8. Admin / Customer 
+9. over flow in the queue when the file comes 
+10. how many threads should be in pool (Thread Pool Executors)
+11. can we use spark 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+log.error("hi", new RuntimeError("hi"))
+
+1. Can we setup log4j2 -> pod (DBMS) - POD1 
+2. Can we setup log4j2 -> pod (file) - POD2
+3. read the data from csv - 10000 * 30 -> in MongoDB - 2pods (3-4 )
+4. Maven Project spring boot -> BitBucket -> Build -> Jenkins -> In local computer (Pod 5)
+
+VPN 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+
+
+
+
+

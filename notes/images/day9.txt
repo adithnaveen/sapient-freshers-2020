@@ -1,0 +1,207 @@
+Time Complexity O
+
+
+public static void printFirstItem(int[] items) {
+    System.out.println(items[0]);
+}
+
+O(1) 
+
+1, 10, 1,000
+public static void printAllItems(int[] items) {
+    for (int item : items) {
+        System.out.println(item);
+    }
+}
+O(n)
+
+
+public static void printAllPossibleOrderedPairs(int[] items) {		-1	
+    for (int firstItem : items) {								- n 
+        for (int secondItem : items) {							- n
+            System.out.println(firstItem + ", " + secondItem);
+        }
+    }
+}
+
+O(n2)  - 10 x 10 = 100 (Quadratic Time )
+
+
+
+
+
+public static void printAllItemsTwice(int[] items) {			- 1 
+    for (int item : items) {									- n 
+        System.out.println(item);
+    }
+
+    // once more, with feeling									- n 
+    for (int item : items) {
+        System.out.println(item);
+    }
+}
+
+O(2n) -> O(n) 
+
+
+
+
+
+
+  public static void printFirstItemThenFirstHalfThenSayHi100Times(int[] items) {
+    System.out.println(items[0]);				-- 1 
+
+    int middleIndex = items.length / 2;
+    int index = 0;
+
+    while (index < middleIndex) {-						-n/2
+        System.out.println(items[index]);
+        index++;
+    }
+
+    for (int i = 0; i < 100; i++) {					-100 
+        System.out.println("hi");
+    }
+}
+
+O(1 + n/2 + 100) - O(n/2) - O(n)
+
+
+public static void xxxx(int[] numbers) {
+
+    System.out.println("these are the numbers:");				-1 
+    for (int number : numbers) {					- n 
+        System.out.println(number);
+    }
+
+    System.out.println("and these are their sums:");
+    for (int firstNumber : numbers) {					- n 
+        for (int secondNumber : numbers) {				- n. (n2)  
+            System.out.println(firstNumber + secondNumber);
+        }
+    }
+}
+
+O(1 + n + n2) -> O(n+ n2) -> O(n2)
+
+
+
+
+
+class A {
+	int x; 
+	private class B {
+	}
+	
+	public void add() {
+		new B() ; // this is valid 
+	}
+}
+
+// compile time problem 
+A a = new A()
+a.add(); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SinglyLinkedList [head=null, tail=null, size=0]
+
+SinglyLinkedList 
+	[head=Node 
+		[value=One, next=null], 
+	tail=Node 
+		[value=One, next=null], 
+	size=1]
+	
+	
+	
+	
+SinglyLinkedList 
+	[head=Node 
+		[value=Two, next=Node 
+		[value=One, next=null]
+		], 
+	tail=Node 
+		[value=One, next=null], 
+	size=2]
+
+SinglyLinkedList 
+	[head=Node 
+		[value=Two, next=Node 
+		[value=One, next=Node 
+		[value=Three, next=null]]],
+	tail=Node 
+		[value=Three, next=null], 
+	size=3]
+
+
+SinglyLinkedList 
+	[head=Node 
+		[value=One, next=Node 
+		[value=Three, next=null]], 
+	tail=Node 
+		[value=Three, next=null], 
+	size=2]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
