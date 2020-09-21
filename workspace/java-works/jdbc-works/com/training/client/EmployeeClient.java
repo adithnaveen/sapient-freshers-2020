@@ -9,6 +9,13 @@ public class EmployeeClient {
 		Employee employee = new Employee(101, "Shashank", "shashank@gmail.com", 12345);
 
 		IEmployeeDAO dao = new EmployeeDAO();
-		System.out.println(dao.insertEmployee(employee));
+//		System.out
+//				.println(dao.insertEmployee(new Employee(103, "Harsh", "harsh@gmail.com", 22113)) 
+//							? "Record Inserted"
+//						: "Sorry not inserted");
+		
+		
+		System.out.println(dao.deleteEmployee(101) ? "Deleted":"Record Not Found");
+		
 	}
 }

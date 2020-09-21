@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class GetConnection {
 	static Connection connection; 
 	
-	public PreparedStatement ps, ps1, ps2; 
+	public PreparedStatement ps, ps1, ps2; // null 
 	public ResultSet rs, rs1, rs2; 
 	
 	public static Connection getPostgresConnection () {

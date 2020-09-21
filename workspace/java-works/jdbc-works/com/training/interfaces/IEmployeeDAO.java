@@ -7,7 +7,6 @@ import com.training.entity.Employee;
 public interface IEmployeeDAO {
 	// CRUD Operations go here 
 	
-	
 	public boolean insertEmployee(Employee employee); 
 	
 	public boolean deleteEmployee(int empId); 
