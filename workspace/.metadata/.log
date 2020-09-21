@@ -4499,3 +4499,48 @@ java.lang.NullPointerException
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:40:38.049
 !MESSAGE executing callback sts4.classpath.KEvBdPOC SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:47:45.178
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:47:45.180
+!MESSAGE classpath=23 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:47:45.181
+!MESSAGE buffering callback sts4.classpath.KEvBdPOC java-works false 23
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:47:45.181
+!MESSAGE executing callback sts4.classpath.KEvBdPOC 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:47:45.224
+!MESSAGE executing callback sts4.classpath.KEvBdPOC SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:04.234
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:04.235
+!MESSAGE classpath=24 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:04.236
+!MESSAGE buffering callback sts4.classpath.KEvBdPOC java-works false 24
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:04.236
+!MESSAGE executing callback sts4.classpath.KEvBdPOC 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:04.239
+!MESSAGE executing callback sts4.classpath.KEvBdPOC SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:06.654
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:06.655
+!MESSAGE classpath=24 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:06.656
+!MESSAGE buffering callback sts4.classpath.KEvBdPOC java-works false 24
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:06.656
+!MESSAGE executing callback sts4.classpath.KEvBdPOC 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-21 11:48:06.660
+!MESSAGE executing callback sts4.classpath.KEvBdPOC SUCCESS [done]
