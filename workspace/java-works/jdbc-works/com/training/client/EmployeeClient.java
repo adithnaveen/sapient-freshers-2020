@@ -15,7 +15,11 @@ public class EmployeeClient {
 //						: "Sorry not inserted");
 		
 		
-		System.out.println(dao.deleteEmployee(101) ? "Deleted":"Record Not Found");
+	//	System.out.println(dao.deleteEmployee(101) ? "Deleted":"Record Not Found");
+		
+		Employee emp = dao.getEmployee(102); 
+		
+		System.out.println(emp);
 		
 	}
 }

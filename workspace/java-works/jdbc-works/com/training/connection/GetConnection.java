@@ -18,6 +18,8 @@ public class GetConnection {
 		try {
 			Class.forName("org.postgresql.Driver"); 
 			connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/sapdb20", "postgres", "kanchan@1"); 
+		
+			System.out.println(connection);
 			return connection;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
