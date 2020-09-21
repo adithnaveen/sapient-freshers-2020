@@ -70,8 +70,7 @@ public class EmployeeDAO implements IEmployeeDAO {
 				gc.ps = GetConnection.getPostgresConnection().prepareStatement(sql);
 				gc.ps.setString(1, empEmail);
 				gc.ps.setInt(2, empId);
-				return employee;
-
+				return gc.ps.executeUpdate()>0? getEmployee(empId):  null; 
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
