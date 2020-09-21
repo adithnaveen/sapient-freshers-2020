@@ -1,6 +1,7 @@
 package com.training.dao;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.training.connection.GetConnection;
@@ -61,7 +62,6 @@ public class EmployeeDAO implements IEmployeeDAO {
 		// if not return null;
 
 		String sql = "update employee1 set email = ? where empid =?";
-
 		try {
 			Employee employee = getEmployee(empId);
 			if (employee != null) {
@@ -112,8 +112,52 @@ public class EmployeeDAO implements IEmployeeDAO {
 
 	@Override
 	public List<Employee> getAllEmployees() {
-		// TODO Auto-generated method stub
-		return null;
+		String sql ="select empid,ename,email,salary from employee1"; 
+		
+		GetConnection gc = new GetConnection(); 
+		List<Employee> list = new ArrayList<Employee>(); 
+		
+		
+		try {
+			gc.ps = GetConnection.getPostgresConnection().prepareStatement(sql); 
+			gc.rs = gc.ps.executeQuery(); 
+			
+			while(gc.rs.next()) {
+				
+				Employee employee = new Employee();
+				employee.setEmpId(gc.rs.getInt(1));
+				employee.setEmpName(gc.rs.getString(2));
+				employee.setEmpEmail(gc.rs.getString(3));
+				employee.setEmpSalary(gc.rs.getDouble(4));
+
+				list.add(employee); 
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list; 
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
