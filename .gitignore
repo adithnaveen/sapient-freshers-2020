@@ -4,4 +4,9 @@ bin/**
 *.class
 **/assessments/**
 **/evaluation/**
+**/db-space/**
+
+*.class
+*.jar 
+**/generated-spring-projects/** 
 

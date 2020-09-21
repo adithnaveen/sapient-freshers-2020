@@ -1,5 +1,8 @@
 package com.training.ds.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BinaryTree {
 
 	private class Node {
@@ -140,6 +143,43 @@ public class BinaryTree {
 		}
 	}
 	
+	public void traversePostOrder(Node node) {
+		if(node!= null) {
+			traversePostOrder(node.left);
+			traversePostOrder(node.right);
+			printNode(node.value);
+		}
+	}
+	public void traversePreOrder(Node node) {
+		if(node!= null) {
+			printNode(node.value);
+			traversePreOrder(node.left);
+			traversePreOrder(node.right);
+		}
+	}
+	
+	
+	public void traverseLevelOrder(Node node) {
+		if(node != null) {
+			Queue<Node> nodes = new LinkedList<Node>(); 
+			
+			// will hold entire tree 
+			nodes.add(node); 
+			
+			while(!nodes.isEmpty()) {
+				Node temp = nodes.remove(); 
+				System.out.println(" " +  temp.value);
+				
+				if(temp.left != null) {
+					nodes.add(temp.left);
+				}
+				
+				if(temp.right != null) {
+					nodes.add(temp.right); 
+				}
+			}
+		}
+	}
 	private void printNode(int value) {
 		System.out.print("-> " + value);
 	}

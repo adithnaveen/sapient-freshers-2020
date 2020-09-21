@@ -1,0 +1,59 @@
+@FunctionalInterface 
+interface Runnable {
+	public void run() {
+		System.out.println("hi"); 
+	}
+}
+
+interface MyInterface {
+	public void test() ; 
+}
+
+class MyClas implements MyInterface  {
+	public void test() 
+		{
+				System.out.println("hiiii"); 
+			}
+	 
+}
+
+MyInterface m = new MyClas(); 
+() -> { Business Logic }; 
+
+
+
+@FunctionalInterface 
+interface Consumer {
+	void accept(T t); 
+}
+
+lists.forEach(new Consumer() {
+	void accept(String t){
+		System.out.println(t); 
+	}
+})
+
+
+lists.forEach( (temp) ->  System.out.println(temp) )
+
+lists.forEach(System.out :: println); 
+
+
+interface Hello {
+	a(); 
+	b(int); 
+	c(String); 
+}
+
+(x) -> System.out.println(x); 
+
+
+
+
+
+
+
+
+
+
+

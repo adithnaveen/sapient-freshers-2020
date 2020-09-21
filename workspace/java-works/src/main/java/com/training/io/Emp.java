@@ -48,8 +48,4 @@ public class Emp implements Serializable {
 	public String toString() {
 		return "Emp [empId=" + empId + ", empName=" + empName + ", empSal=" + empSal + "]";
 	}
-	
-	
-	
-	
 }
