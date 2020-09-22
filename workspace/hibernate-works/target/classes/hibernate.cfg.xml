@@ -2,39 +2,20 @@
 
 <!DOCTYPE hibernate-configuration PUBLIC
 "-//Hibernate/Hibernate Configuration DTD//EN"
-"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
 	<session-factory>
 		<property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
-		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/sapdb20?createDatabaseIfNotExist=true</property>
+		<property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/sapdb20</property>
 		<property name="hibernate.connection.username">postgres</property>
 		<property name="hibernate.connection.password">kanchan@1</property>
-		<!--  create - to drop and create , update - to create only if not exists -->
- 		<property name="hibernate.hbm2ddl.auto">update</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<property name="dialect">org.hibernate.dialect.PostgreSQL91Dialect</property>
-<!-- 		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
- -->		
-			<!-- 
+		<property name="dialect">org.hibernate.dialect.PostgreSQL9Dialect</property>
+		<property name="connection.pool_size">2</property>
+		<property name="hibernate.current_session_context_class">thread</property>
 		
-		
-		<mapping class="training.hpe.entity.Person"/>
-		
-		
-	
-		<mapping class="training.hpe.entity.Product"/>
-		<mapping class="training.hpe.entity.Television"/>
-		<mapping class="training.hpe.entity.CellPhone"/> 
-		<mapping class="training.hpe.entity.College"/>
-		<mapping class="training.hpe.entity.Customer"/>
-		<mapping class="training.hpe.entity.EmployeeEntity"/>
-		<mapping class="training.hpe.entity.AccountEntity"/>
-		-->
-		
-	 
-		
-		
-</session-factory>
+	</session-factory>
 </hibernate-configuration>

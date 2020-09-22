@@ -3,6 +3,8 @@ package com.hibernate.util;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+import com.hibernate.entity.Person;
+
 public class HibernateUtil {
 	private HibernateUtil() {
 	}
@@ -14,9 +16,10 @@ public class HibernateUtil {
 			Configuration cfg = new Configuration();
 			cfg.configure();	// hibernate.cfg.xml(by default) 
 
-			cfg.addAnnotatedClass(Object.class);
+			cfg.addAnnotatedClass(Person.class);
 
 			sessionFactory = cfg.buildSessionFactory();
+			
 
 		}
 

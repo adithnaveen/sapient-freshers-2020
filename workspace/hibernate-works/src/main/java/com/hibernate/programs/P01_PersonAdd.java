@@ -34,7 +34,7 @@ public class P01_PersonAdd {
 		// 1. Begin the transaction 
 		 transaction = session.beginTransaction(); 
 		// 2. perform the transaction(INSERT/UPDATE/DELETE/SELECT)  
-		session.persist(person);
+		session.save(person); 
 		// 3. try to commit 
 		transaction.commit(); 
 		System.out.println("Data Stored... ");
@@ -43,9 +43,10 @@ public class P01_PersonAdd {
 			transaction.rollback(); 
 		}finally {
 		// 5. close
-			session.close(); 
+			session.close();
+			sf.close(); 
 		}
-		sf.close(); 
+		
 	}
 }
 

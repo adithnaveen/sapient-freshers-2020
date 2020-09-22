@@ -5098,3 +5098,45 @@ javax.net.ssl.SSLPeerUnverifiedException: peer not authenticated
 	at org.eclipse.ecf.provider.filetransfer.httpclient45.HttpClientRetrieveFileTransfer$1.performFileTransfer(HttpClientRetrieveFileTransfer.java:988)
 	at org.eclipse.ecf.filetransfer.FileTransferJob.run(FileTransferJob.java:74)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:07.126
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:07.129
+!MESSAGE classpath=40 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:07.130
+!MESSAGE buffering callback sts4.classpath.BrNdTDpp hibernate-works false 40
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:07.131
+!MESSAGE executing callback sts4.classpath.BrNdTDpp 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:07.175
+!MESSAGE executing callback sts4.classpath.BrNdTDpp SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:12.342
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:12.344
+!MESSAGE classpath=40 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:12.346
+!MESSAGE buffering callback sts4.classpath.BrNdTDpp hibernate-works false 40
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:12.348
+!MESSAGE executing callback sts4.classpath.BrNdTDpp 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 10:56:12.356
+!MESSAGE executing callback sts4.classpath.BrNdTDpp SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 11:00:20.761
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.BrNdTDpp
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 11:00:20.762
+!MESSAGE unsubscribing from classpath changes: sts4.classpath.BrNdTDpp
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 11:00:20.763
+!MESSAGE subsribers = {}
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-09-22 11:00:20.763
+!MESSAGE ClasspathListenerHandler removeClasspathListener sts4.classpath.BrNdTDpp => OK
