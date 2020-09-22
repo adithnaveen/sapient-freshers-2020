@@ -16,31 +16,38 @@ public class Television extends Product {
 		this.screenType = screenType;
 		this.resolution = resolution;
 	}
-public Television() {
-	// TODO Auto-generated constructor stub
-}
-@Override
-public String toString() {
-	return "Television [size=" + size + ", screenType=" + screenType + ", resolution=" + resolution + "]";
-}
-public int getSize() {
-	return size;
-}
-public void setSize(int size) {
-	this.size = size;
-}
-public String getScreenType() {
-	return screenType;
-}
-public void setScreenType(String screenType) {
-	this.screenType = screenType;
-}
-public String getResolution() {
-	return resolution;
-}
-public void setResolution(String resolution) {
-	this.resolution = resolution;
-}
 
+	public Television() {
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "Television [size=" + size + ", screenType=" + screenType + ", resolution=" + resolution + "]";
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public String getScreenType() {
+		return screenType;
+	}
+
+	public void setScreenType(String screenType) {
+		this.screenType = screenType;
+	}
+
+	public String getResolution() {
+		return resolution;
+	}
+
+	public void setResolution(String resolution) {
+		this.resolution = resolution;
+	}
 
 }
