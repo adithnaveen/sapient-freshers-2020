@@ -123,7 +123,6 @@ public class EmployeeDAO implements IEmployeeDAO {
 			gc.rs = gc.ps.executeQuery(); 
 			
 			while(gc.rs.next()) {
-				
 				Employee employee = new Employee();
 				employee.setEmpId(gc.rs.getInt(1));
 				employee.setEmpName(gc.rs.getString(2));

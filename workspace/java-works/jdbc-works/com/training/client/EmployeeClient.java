@@ -17,9 +17,12 @@ public class EmployeeClient {
 		
 	//	System.out.println(dao.deleteEmployee(101) ? "Deleted":"Record Not Found");
 		
-		Employee emp = dao.getEmployee(102); 
+//		Employee emp = dao.getEmployee(102); 
+//		
+//		System.out.println(emp);
 		
-		System.out.println(emp);
+		dao.getAllEmployees().forEach(System.out :: println);
+		
 		
 	}
 }
