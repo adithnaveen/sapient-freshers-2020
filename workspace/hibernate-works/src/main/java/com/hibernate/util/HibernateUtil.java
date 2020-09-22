@@ -13,14 +13,12 @@ public class HibernateUtil {
 
 	public static SessionFactory getSessionFactory() {
 		if (sessionFactory == null) {
+			System.out.println("session factory null and creating..");
 			Configuration cfg = new Configuration();
 			cfg.configure();	// hibernate.cfg.xml(by default) 
 
 			cfg.addAnnotatedClass(Person.class);
-
 			sessionFactory = cfg.buildSessionFactory();
-			
-
 		}
 
 		return sessionFactory;

@@ -14,16 +14,17 @@ import javax.persistence.Table;
 @Table(name = "persons")
 public class Person {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id; 
-	private Integer age; 
-	private String name; 
-	private Double height; 
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private Integer age;
+	private String name;
+	private Double height;
 	@Column(name = "dob")
 	private Date birthDate;
-	
-	public Person() {}
-	
+
+	public Person() {
+	}
+
 	public Person(Integer id, Integer age, String name, Double height, Date birthDate) {
 		super();
 		this.id = id;
@@ -72,8 +73,11 @@ public class Person {
 	public void setBirthDate(Date birthDate) {
 		this.birthDate = birthDate;
 	}
-	
-	
-	
-	
+
+	@Override
+	public String toString() {
+		return "Person [id=" + id + ", age=" + age + ", name=" + name + ", height=" + height + ", birthDate="
+				+ birthDate + "]";
+	}
+
 }
