@@ -2,7 +2,18 @@ package com.hibernate.entity;
 
 import javax.persistence.Entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+@ToString
 public class IPhone extends CellPhone {
 	private String availableCountry;
 
@@ -10,20 +21,6 @@ public class IPhone extends CellPhone {
 			String availableCountry) {
 		super(pId, pName, pDesc, pPrice, type, os, connectivity);
 		this.availableCountry = availableCountry;
-	} 
-	public IPhone() {}
-	public String getAvailableCountry() {
-		return availableCountry;
 	}
-	public void setAvailableCountry(String availableCountry) {
-		this.availableCountry = availableCountry;
-	}
-	@Override
-	public String toString() {
-		return "IPhone [availableCountry=" + availableCountry + "]";
-	}
-	
-	
-	
-	
+
 }

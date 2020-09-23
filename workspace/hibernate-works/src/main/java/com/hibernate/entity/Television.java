@@ -2,8 +2,20 @@ package com.hibernate.entity;
 
 import javax.persistence.Entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 @Entity
 
+@NoArgsConstructor
+@ToString
+@Getter
+@Setter
+@AllArgsConstructor
 public class Television extends Product {
 	private int size;
 	private String screenType; // LCD, LED, CRT
@@ -17,37 +29,6 @@ public class Television extends Product {
 		this.resolution = resolution;
 	}
 
-	public Television() {
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "Television [size=" + size + ", screenType=" + screenType + ", resolution=" + resolution + "]";
-	}
-
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
-	}
-
-	public String getScreenType() {
-		return screenType;
-	}
-
-	public void setScreenType(String screenType) {
-		this.screenType = screenType;
-	}
-
-	public String getResolution() {
-		return resolution;
-	}
-
-	public void setResolution(String resolution) {
-		this.resolution = resolution;
-	}
-
+	
+	
 }

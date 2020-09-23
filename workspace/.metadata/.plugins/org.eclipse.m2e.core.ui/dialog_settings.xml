@@ -44,11 +44,13 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="com.hibernate.works"/>
 			<item value="com.training"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="hibernate-works"/>
 			<item value="java-works"/>
 			<item value="review"/>
 			<item value="first-multi-module-project"/>
