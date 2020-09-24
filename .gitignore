@@ -6,8 +6,9 @@ bin/**
 **/evaluation/**
 **/db-space/**
 workspace/.metadata/** 
-
+**/workspace/Servers/**
 *.class
 *.jar 
 **/generated-spring-projects/** 
+**/node_modules/**
 

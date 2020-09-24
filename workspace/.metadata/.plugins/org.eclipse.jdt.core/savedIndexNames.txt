@@ -1,17 +1,2 @@
 INDEX VERSION 1.131+/Volumes/Kanchan/MyTrainings/sapient-fresher-2020-sep/workspace/.metadata/.plugins/org.eclipse.jdt.core
-1911871101.index
-789978441.index
-3471984194.index
-134285535.index
-2259773393.index
-281640105.index
 2980182296.index
-3461702332.index
-525471636.index
-712978141.index
-1494584814.index
-757474350.index
-2521925952.index
-3289780417.index
-2434604131.index
-926777545.index
