@@ -1,7 +1,16 @@
 package com.training.dao;
 
-public class MySQLDao  implements IDatabase {
+import org.springframework.stereotype.Component;
+
+@Component
+public class MySQLDao implements IDatabase {
+	public MySQLDao() {
+		System.out.println("MySQLDao - Constructed... ");
+	}
+
 	public int getCount() {
-		return 100; 
+		System.out.println("i'm in count..... ");
+
+		return 100;
 	}
 }

@@ -23,6 +23,12 @@ public class P01_Basics {
 		dao = ctx.getBean(DummyDao.class); 
 		System.out.println("dummy count -> " +dao.getCount());  
 		
+		DummyDao dao2 = ctx.getBean(DummyDao.class); 
+		
+		System.out.println(dao.hashCode());
+		System.out.println(dao2.hashCode());
+		
+		
 		MySQLDao dao1 = ctx.getBean(MySQLDao.class); 
 		System.out.println("mysql count -> "+dao1.getCount());
 		
