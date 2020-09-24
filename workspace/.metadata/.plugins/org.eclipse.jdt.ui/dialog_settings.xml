@@ -154,4 +154,11 @@
 		<item key="updateQualifiedNames" value="false"/>
 		<item key="patterns" value="*"/>
 	</section>
+	<section name="DialogBounds_SuperInterfaceSelectionDialog">
+		<item key="DIALOG_X_ORIGIN" value="99"/>
+		<item key="DIALOG_Y_ORIGIN" value="15"/>
+		<item key="DIALOG_WIDTH" value="394"/>
+		<item key="DIALOG_HEIGHT" value="455"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
 </section>

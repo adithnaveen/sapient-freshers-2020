@@ -9,5 +9,6 @@
 	<classpathentry kind="src" path="01Singleton"/>
 	<classpathentry kind="src" path="02-factory"/>
 	<classpathentry kind="src" path="03-builder"/>
+	<classpathentry kind="src" path="04-ioc"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
