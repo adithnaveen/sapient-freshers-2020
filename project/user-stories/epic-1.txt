@@ -1,7 +1,7 @@
 Epic 1 : To process the Credit Card information file 
 
 User Story : When the transaction entry is valid for single file  
-AC1:
+AC:
 --------------------------------------------
 Given the end point POST /api/process
 And file with the name transaction[xxxx].csv 
@@ -132,7 +132,7 @@ User Story : login to the system as admin valid case
 AC: 
 -------------------------------------------------------
 Given the end point POST /api/admin/login 
-When the user name and password 
+When the data model given {username:"xxxx", password:"xxxx"}
 Then check the user name should not be less than 6 characters 
 And should not contain special characters except _ @ 
 And password should have atleast 1 special character 
@@ -147,7 +147,7 @@ User Story : login to the system as admin invalid case
 AC: 
 -------------------------------------------------------
 Given the end point POST /api/admin/login 
-When the user name and password 
+When the data model given {username:"xxxx", password:"xxxx"}
 Then check the user name should not be less than 6 characters 
 And should not contain special characters except _ @ 
 And password should have atleast 1 special character 
@@ -161,19 +161,79 @@ And the error code 401
 
 User Story : Register admin into the system 
 AC: 
+-------------------------------------------------------
 Given the endpoint POST /api/admin/register
-When the 
+When the data model given {username:"xxxx", password:"xxxx"}
+Then check username  should not be less than 6 characters 
+And should not contain special characters except _ @ 
+And password should have atleast 1 special character 
+And number of characters should not be less than 6 
+But the password to be encrypted 
+Then store the record in the DB 
+And an acknowledgement to be sent as string "Admin Registered Successfully" 
 
 
 
+User Story: Register as customer valid case 
+AC: 
+-------------------------------------------------------
+Given the endpoint POST /api/customer/register
+When the data model given 
+	{
+		username:"xxxx", 
+		password:"xxxx", 
+		credit_card:[xxxx-xxxx-xxxx-xxxx, xxxx-xxxx-xxxx-xxxx, xxxx-xxxx-xxxx-xxxx], 
+		name: {
+			first:"name", 
+			last:"name"
+		}, 
+		dob : dd/MM/yyyy, 
+		sex : MALE/FEMALE/TRANSGENDER
+	}
+Then check the user name should not be less than 6 characters 
+And should not contain special characters except _ @ 
+And password should have atleast 1 special character 
+And number of characters should not be less than 6 
+And validate each credit card number in the list 
+And dob should be min 18 years 
+And sex should be constant MALE/FEMALE/TRANSGENDER
+But the password, credit_card to be encrypted 
+Then store the record in the DB 
+And an acknowledgement to be sent as string "Customer Registered Successfully, please validate your credit card on first login" 
 
 
 
+User Story: Register as customer invalid case 
+AC: 
+-------------------------------------------------------
+Given the endpoint POST /api/customer/register
+When the data model given 
+	{
+		username:"xxxx", 
+		password:"xxxx", 
+		credit_card:[xxxx-xxxx-xxxx-xxxx, xxxx-xxxx-xxxx-xxxx, xxxx-xxxx-xxxx-xxxx], 
+		name: {
+			first:"name", 
+			last:"name"
+		}, 
+		dob : dd/MM/yyyy, 
+		sex : MALE/FEMALE/TRANSGENDER
+	}
+Then check the user name should not be less than 6 characters 
+And should not contain special characters except _ @ 
+And password should have atleast 1 special character 
+And number of characters should not be less than 6 
+And validate each credit card number in the list 
+And dob should be min 18 years 
+And sex should be constant MALE/FEMALE/TRANSGENDER
+When any of the validation rules fail 
+Then an acknowledgement to be sent as string "Please validate the data <appropriate message of the field>" 
 
 
 
-
-
+User Story: customer login first time 
+AC: 
+-------------------------------------------------------
 
 
 

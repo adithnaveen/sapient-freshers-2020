@@ -13,6 +13,7 @@ public class HelloWorld {
 	}
 
 	@RequestMapping("/hello.html")
+	// / + hello.html
 	public ModelAndView helloWorld() {
 		String message = "Welcome Naveen";
 		// first param : view name

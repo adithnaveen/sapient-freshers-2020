@@ -5,7 +5,7 @@ bin/**
 **/assessments/**
 **/evaluation/**
 **/db-space/**
-workspace/.metadata/** 
+**/workspace/.metadata/** 
 **/workspace/Servers/**
 *.class
 *.jar 
