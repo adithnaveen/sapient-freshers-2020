@@ -21,7 +21,9 @@ public class LoginValidate extends HttpServlet {
 		User user = makeUser(request);
 
 		if (new com.training.bl.LoginValidate().validate(user)) {
-			response.getWriter().print("Welcome User " + user.getUserName());
+			String path ="/WEB-INF/views/home.jsp"; 
+			request.getRequestDispatcher(path).forward(request, response);
+
 		} else {
 			response.getWriter().print("Sorry invalid Credentials:  " + user.getUserName());
 
