@@ -13,7 +13,7 @@
 		</list>
 	</section>
 	<section name="MavenProjectWizardArchetypePage">
-		<item key="catalog" value="All Catalogs"/>
+		<item key="catalog" value="https://repo1.maven.org/maven2/archetype-catalog.xml"/>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
 			<item value="[artifactId]-TRUNK"/>
@@ -44,19 +44,10 @@
 	</section>
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
-			<item value="com.training"/>
-			<item value="com.hibernate.works"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
-			<item value="spring-works"/>
-			<item value="hibernate-works"/>
-			<item value="java-works"/>
-			<item value="review"/>
-			<item value="first-multi-module-project"/>
-			<item value="message"/>
-			<item value="first-project"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -104,6 +95,7 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Volumes/Kanchan/MyTrainings/sapient-fresher-2020-sep/genered-spring-projects/spring-boot-works"/>
 			<item value="/Volumes/Kanchan/MyTrainings/sapient-fresher-2020-sep/genered-spring-projects/demo"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -113,6 +105,19 @@
 			<item value="[groupId].[artifactId]"/>
 			<item value="[groupId].[artifactId]-[version]"/>
 			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="com.spring.mvc"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="spring-mvc-works"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
 		</list>
 	</section>
 </section>

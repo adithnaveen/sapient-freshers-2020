@@ -12,3 +12,6 @@ bin/**
 **/generated-spring-projects/** 
 **/node_modules/**
 **/project/**
+**/genered-spring-projects/**
+
+
