@@ -7,29 +7,47 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class LoginValidate
- */
+import com.training.bean.User;
+
 @WebServlet("/login")
 public class LoginValidate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		String uname = request.getParameter("uname");
-		String pwd = request.getParameter("pwd"); 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		
 		response.setContentType("text/html");
+
+		User user = makeUser(request); 
 		
-		
-		if(uname.equals("india") && pwd.equals("sapient")) {
-			response.getWriter().print("Welcome User " + uname);
-		}else  {
-			response.getWriter().print("Sorry invalid Credentials:  " + uname);
-			
+		if(new com.training.bl.LoginValidate().validate(user)) {
+			response.getWriter().print("Welcome User " + user.getUserName());
+		}else {
+			response.getWriter().print("Sorry invalid Credentials:  " + user.getUserName());
 		}
 	}
 
-}
+	
+	private User makeUser(HttpServletRequest request) {
+		User user  = new User();
+		user.setUserName(request.getParameter("uname"));
+		user.setPassword(request.getParameter("pwd"));
+		return user;
+	}
+	
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

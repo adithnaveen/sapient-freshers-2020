@@ -1,12 +1,14 @@
-Epic 1 : To process the .csv file 
+Epic 1 : To process the Credit Card information file 
 
-AC1: When the transaction entry is valid 
+User Story : When the transaction entry is valid for single file  
+AC1:
+--------------------------------------------
 Given the end point POST /api/process
-And file with the name Transaction[xxxx].csv 
+And file with the name transaction[xxxx].csv 
 And the file content is not empty
-When the file to be copied to folder "stage-1"
+When the request is made, copy the file to the folder called "new"
+When the application is ready to start processing the file to be copied to "processing" folder
 And rename the file Transaction[xxxx]_processing.csv 
-And the processing the file 
 And process each record with the validation rules given below 
 	tr_id -should be between 6 & 25 chars 
 				   - only numbers 
@@ -22,7 +24,7 @@ And process each record with the validation rules given below
 	cretid_card_no - xxxx-xxxx-xxxx-xxxx (16 digits)
 	expiry - future date 
 	trasnaction_date - should not be over 1 week from the day of processing 
-					 - should be in  the formar -dd/MM/yyyy
+					 - should be in  the format -dd/MM/yyyy
 	transaction_time - time should be in 24 Hr Format 
 					 - dd:mm:ss 
 	transaction_location - char between 7 & 20 characters 
@@ -32,26 +34,31 @@ And process each record with the validation rules given below
 When all the records is validated 
 Then the record is queued to be in DB 
 And the record in the batch will be persisted 
-Then move the file Transaction[xxxx]_processing.csv to "stage-2"
+Then move the file Transaction[xxxx]_processing.csv to "done"
 And rename the file to Transaction[xxxx]_processed.csv 
 Then an acknowledgement is given for the user "File Processed Successfully"
 
 
-
-AC2: When the transaction file name is invalid - file
+User Story: When the transaction file name is invalid - file
+AC: 
+------------------------------------------------
 Given the end point POST /api/process
 file with the name Traxxxx[xxxx].csv 
 Then an acknowledgement is given for the user "Sorry file Name : Traxxxx[xxxx].csv" cannot be processed 
+And the file to be copied to "garbage" folder 
 
 
-AC3: When the transaction entry is invalid in file
+
+User Story : When the transaction entry is invalid in file
+AC:
+------------------------------------------------
 Given the end point POST /api/process
-And file with the name Transaction[xxxx].csv 
+And file with the name transaction[xxxx].csv 
 And the file content is not empty
-When the file to be copied to folder "stage-1"
+When the request is made, copy the file to the folder called "new"
+When the application is ready to start processing the file to be copied to "processing" folder
 And rename the file Transaction[xxxx]_processing.csv 
-And the processing the file 
-And process each record with the validation rules given  
+And process each record with the validation rules given below 
 	tr_id -should be between 6 & 25 chars 
 				   - only numbers 
 				   - should not be -ve digit 
@@ -75,9 +82,107 @@ And process each record with the validation rules given
 	transaction_status - SUCCESS/FAILED/PENDING
 When any record in the file is invalid 
 Then the error records to be logged to flat file excluding firstname, last_name, expiry, 
-Then move the file Transaction[xxxx]_processing.csv to "stage-2"
-And rename the file to Transaction[xxxx]_processed.csv 
+Then move the file Transaction[xxxx]_processing.csv to "error"
+And rename the file to Transaction[xxxx]_error.csv 
 Then show an acknowledgement is given for the user "File Processed Successfully with xxxxx entries having error" 
+
+
+
+User Story : When the transaction entry is valid for multiple files
+AC:
+--------------------------------------------
+Given the end point POST /api/process
+And file with the names received with the format transaction[xxxx].csv 
+And all the files in the list are not empty 
+Then copy the file to the folder called "new"
+When the application is ready to start processing the files to be copied to "processing" folder
+And rename all the files with name :  Transaction[xxxx]_processing.csv 
+And process each record with the validation rules given below 
+	tr_id -should be between 6 & 25 chars 
+				   - only numbers 
+				   - should not be -ve digit 
+	tr_amount - should be digit 
+	tr_type - DB/CR 
+	tr_mode - ONLINE/POS/ATM
+	merchant_id - should be between 6 & 12 chars 
+				   - Alpha numberic
+				   - should not accept special characters 
+	first_name - shoule be between 5 & 20 chars
+	last_name - shoule be between 5 & 20 chars
+	cretid_card_no - xxxx-xxxx-xxxx-xxxx (16 digits)
+	expiry - future date 
+	trasnaction_date - should not be over 1 week from the day of processing 
+					 - should be in  the format -dd/MM/yyyy
+	transaction_time - time should be in 24 Hr Format 
+					 - dd:mm:ss 
+	transaction_location - char between 7 & 20 characters 
+					     - to accept only alphabets 
+	transaction_id - validate a ipv4 
+	transaction_status - SUCCESS/FAILED/PENDING
+When all the records is validated in all the files 
+Then the record is queued to be in DB 
+And the records in the batch will be persisted 
+Then move the file Transaction[xxxx]_processing.csv to "done"
+And rename the file to Transaction[xxxx]_processed.csv 
+Then an acknowledgement is given for the user "File Processed Successfully"
+
+
+
+User Story : login to the system as admin valid case 
+AC: 
+-------------------------------------------------------
+Given the end point POST /api/admin/login 
+When the user name and password 
+Then check the user name should not be less than 6 characters 
+And should not contain special characters except _ @ 
+And password should have atleast 1 special character 
+And number of characters should not be less than 6 
+Then validate the user exists in the system 
+When the user exists in the database 
+Then return the JWT token 
+And the error code 200 
+
+
+User Story : login to the system as admin invalid case 
+AC: 
+-------------------------------------------------------
+Given the end point POST /api/admin/login 
+When the user name and password 
+Then check the user name should not be less than 6 characters 
+And should not contain special characters except _ @ 
+And password should have atleast 1 special character 
+And number of characters should not be less than 6 
+Then validate the user exists in the system 
+When the userdoes not  exists 
+Then return a empty string 
+And the error code 401 
+
+
+
+User Story : Register admin into the system 
+AC: 
+Given the endpoint POST /api/admin/register
+When the 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
