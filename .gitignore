@@ -11,4 +11,4 @@ workspace/.metadata/**
 *.jar 
 **/generated-spring-projects/** 
 **/node_modules/**
-
+**/project/**
