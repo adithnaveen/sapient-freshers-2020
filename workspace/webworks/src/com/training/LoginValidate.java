@@ -16,34 +16,35 @@ public class LoginValidate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
 		response.setContentType("text/html");
 
-		User user = makeUser(request); 
-		
-		if(new com.training.bl.LoginValidate().validate(user)) {
+		User user = makeUser(request);
+
+		if (new com.training.bl.LoginValidate().validate(user)) {
 			response.getWriter().print("Welcome User " + user.getUserName());
-		}else {
+		} else {
 			response.getWriter().print("Sorry invalid Credentials:  " + user.getUserName());
+
+			request.getRequestDispatcher("/LoginForm.html").include(request, response);
 		}
 	}
 
-	
 	private User makeUser(HttpServletRequest request) {
-		User user  = new User();
+		System.out.println(request.getParameter("gender"));
+		String[] hobbies = request.getParameterValues("hobbies");
+		
+		for(String temp : hobbies) {
+			System.out.println(temp);
+		}
+		
+		
+		User user = new User();
 		user.setUserName(request.getParameter("uname"));
 		user.setPassword(request.getParameter("pwd"));
 		return user;
 	}
-	
-} 
 
-
-
-
-
-
-
+}
 
 
 
