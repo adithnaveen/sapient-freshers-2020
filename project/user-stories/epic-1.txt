@@ -81,7 +81,7 @@ And process each record with the validation rules given below
 	transaction_id - validate a ipv4 
 	transaction_status - SUCCESS/FAILED/PENDING
 When any record in the file is invalid 
-Then the error records to be logged to flat file excluding firstname, last_name, expiry, 
+Then the error records to be logged to flat file excluding firstname, last_name, expiry 
 Then move the file Transaction[xxxx]_processing.csv to "error"
 And rename the file to Transaction[xxxx]_error.csv 
 Then show an acknowledgement is given for the user "File Processed Successfully with xxxxx entries having error" 
@@ -379,13 +379,12 @@ Then the application should the test cases for the controller
 
 --------------------------------------------------------
 
-15. User Story: When the applicaiton is written the same application has check for the valid test cased and code coverage report to be generated, for the same setup sonar qube for the application and the code coverage to be reflected in the:  https://tools.publicis.sapient.com/sonar/. 
+15. User Story: When the applicaiton is written the same application has to check for the valid test case and code coverage report to be generated, for the same, setup sonar qube for the application and the code coverage to be reflected in the:  https://tools.publicis.sapient.com/sonar/. 
 
 --------------------------------------------------------
 
 
-16. Create a pipeline where the code is kept in BitBucket, the build should be done on the remote system with ip address 10.150.223.240
-, and the application should be invoked.  from any system which has VPN access to that IP : 10.150.223.240, the the multi module application with POSTMAN
+16. Create a pipeline where the code is kept in BitBucket, the build should be done on the remote system with ip address 10.150.223.240, and the application should be invoked.  from any system which has VPN access to that IP : 10.150.223.240, the the multi module application with POSTMAN
 
 
 --------------------------------------------------------
