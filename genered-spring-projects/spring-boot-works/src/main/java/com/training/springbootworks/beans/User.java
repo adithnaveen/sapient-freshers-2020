@@ -1,14 +1,9 @@
 package com.training.springbootworks.beans;
 
-import java.util.List;
-
 import org.springframework.data.annotation.Id;
-import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.hateoas.Links;
-import org.springframework.hateoas.RepresentationModel;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,6 +17,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @Document
+//@JsonFilter(value = "")
 public class User { // extends RepresentationModel<User> {
 	@Id
 	private Integer id;
