@@ -1,6 +1,6 @@
-Epic 1 : To process the Credit Card information file 
+Epic 1 : To process the Credit Card information file, and generating the mock data 
 
-User Story : When the transaction entry is valid for single file  
+1. User Story : When the transaction entry is valid for single file  
 AC:
 --------------------------------------------
 Given the end point POST /api/process
@@ -39,7 +39,7 @@ And rename the file to Transaction[xxxx]_processed.csv
 Then an acknowledgement is given for the user "File Processed Successfully"
 
 
-User Story: When the transaction file name is invalid - file
+2.User Story: When the transaction file name is invalid - file
 AC: 
 ------------------------------------------------
 Given the end point POST /api/process
@@ -49,7 +49,7 @@ And the file to be copied to "garbage" folder
 
 
 
-User Story : When the transaction entry is invalid in file
+3. User Story : When the transaction entry is invalid in file
 AC:
 ------------------------------------------------
 Given the end point POST /api/process
@@ -88,7 +88,7 @@ Then show an acknowledgement is given for the user "File Processed Successfully 
 
 
 
-User Story : When the transaction entry is valid for multiple files
+4. User Story : When the transaction entry is valid for multiple files
 AC:
 --------------------------------------------
 Given the end point POST /api/process
@@ -128,7 +128,7 @@ Then an acknowledgement is given for the user "File Processed Successfully"
 
 
 
-User Story : login to the system as admin valid case 
+5. User Story : login to the system as admin valid case 
 AC: 
 -------------------------------------------------------
 Given the end point POST /api/admin/login 
@@ -139,11 +139,11 @@ And password should have atleast 1 special character
 And number of characters should not be less than 6 
 Then validate the user exists in the system 
 When the user exists in the database 
-Then return the JWT token 
+Then return the JWT token which will be used to login 
 And the error code 200 
 
 
-User Story : login to the system as admin invalid case 
+6. User Story : login to the system as admin invalid case 
 AC: 
 -------------------------------------------------------
 Given the end point POST /api/admin/login 
@@ -159,11 +159,12 @@ And the error code 401
 
 
 
-User Story : Register admin into the system 
+7. User Story : Register admin into the system 
 AC: 
 -------------------------------------------------------
 Given the endpoint POST /api/admin/register
 When the data model given {username:"xxxx", password:"xxxx"}
+And username should be unique in the database 
 Then check username  should not be less than 6 characters 
 And should not contain special characters except _ @ 
 And password should have atleast 1 special character 
@@ -174,7 +175,7 @@ And an acknowledgement to be sent as string "Admin Registered Successfully"
 
 
 
-User Story: Register as customer valid case 
+8. User Story: Register as customer valid case 
 AC: 
 -------------------------------------------------------
 Given the endpoint POST /api/customer/register
@@ -188,9 +189,11 @@ When the data model given
 			last:"name"
 		}, 
 		dob : dd/MM/yyyy, 
-		sex : MALE/FEMALE/TRANSGENDER
+		sex : MALE/FEMALE/TRANSGENDER, 
+		email: name@domain.com
 	}
 Then check the user name should not be less than 6 characters 
+And username should be unique in the database 
 And should not contain special characters except _ @ 
 And password should have atleast 1 special character 
 And number of characters should not be less than 6 
@@ -203,7 +206,7 @@ And an acknowledgement to be sent as string "Customer Registered Successfully, p
 
 
 
-User Story: Register as customer invalid case 
+9. User Story: Register as customer invalid case 
 AC: 
 -------------------------------------------------------
 Given the endpoint POST /api/customer/register
@@ -217,9 +220,11 @@ When the data model given
 			last:"name"
 		}, 
 		dob : dd/MM/yyyy, 
-		sex : MALE/FEMALE/TRANSGENDER
+		sex : MALE/FEMALE/TRANSGENDER, 
+		email: name@domain.com		
 	}
 Then check the user name should not be less than 6 characters 
+And username should be unique in the database 
 And should not contain special characters except _ @ 
 And password should have atleast 1 special character 
 And number of characters should not be less than 6 
@@ -231,11 +236,342 @@ Then an acknowledgement to be sent as string "Please validate the data <appropri
 
 
 
-User Story: customer login first time 
+10. User Story: customer login first time 
 AC: 
 -------------------------------------------------------
+Given the end point POST /api/customer/login 
+When the data mode given 
+{
+	username:"xxxx", 
+	password:"xxxx"
+}
+And the user is logged in for the first time (changed the data model in registration if needed)
+Then the list of credit cards shown 
+And the message to be shown as "congragulations for registration"
+And the email to be sent to the registered email id 
+And the account has to valid or should be able to access the contents once the customer clicks on the link received on the registered email account 
 
 
+
+
+11. User Story: customer login subseqent time 
+AC: 
+-------------------------------------------------------
+Given the end point POST /api/login 
+When the data mode given 
+{
+	username:"xxxx", 
+	password:"xxxx"
+}
+When the customer is logged in for subseqent time 
+Then the list of end points to be shown for the user to use it like below 
+	/api/account (where user can edit his/her personal details as of now update the password, which accept the data model with password)
+	/api/creditcards (which gives the list of all the credit cards which user has)
+	/api/creditcards/lastmonth 
+	etc 
+And each API end point should be valid 
+
+
+12. User Story: Creating a rule based enginee to generate data - all valid data 
+AC: 
+--------------------------------------------------------
+Given the end point /api/admin/generate 
+But the admin should be logged in 
+When the admin needs to generate the data 
+And no_of_records specified should be miniumum 1 and maximum 10,00,000 
+And credit_card number to to be taken from the registered list of number which is registered by customer
+And validate the credit_card number
+And the credit_card to be randomized 
+And the tr_id should be a running serial number from the last indexed number from the DB 
+	tr_id -should be between 6 & 25 chars 
+				   - only numbers 
+				   - should not be -ve digit 
+And tr_amount can be +ve or -ve  should be random number between (-1,00,000 to 1,00,000) 
+But the value should not be 0 
+	tr_amount - should be digit 
+When the tr_amount is -ve then the transaction type should be DB 
+When the tr_amount is +ve then the transaction type should be CR 
+	tr_type - DB/CR 
+And tr_mode value should be ONLINE/POS/ATM ensure all the values should be there with maximum ratio between 1:3 
+	tr_mode - ONLINE/POS/ATM
+And merchant_id to be generate as random number 
+	merchant_id - should be between 6 & 12 chars 
+				   - Alpha numberic
+				   - should not accept special characters 
+And first_name and last_name to be generate from external API like https://randomuser.me/
+	first_name - shoule be between 5 & 20 chars
+	last_name - shoule be between 5 & 20 chars
+And expiry date should be random month
+And the date should be 10 years from the date of generation
+	expiry - future date 
+And trasnaction_date - should not be over 1 week from the day of processing 
+					 - should be in  the format -dd/MM/yyyy
+And transaction_time - time should be in 24 Hr Format 
+					 - dd:mm:ss 
+And transaction_location to be generated from external site like  http://names.drycodes.com/
+transaction_location - char between 7 & 20 characters 
+					     - to accept only alphabets 
+And the ip address should be generate based on the input the user can specify Type A or B or C or D 
+	transaction_id - validate a ipv4 
+And transaction_status - SUCCESS/FAILED/PENDING 
+When invoked the application should generate a .csv file with the condition given  
+But the generation of the mock data should be configurable 
+
+
+
+13. User Story: Creating a rule based enginee to generate data - with invalid data 
+AC: 
+--------------------------------------------------------
+Given the end point /api/admin/generate 
+But the admin should be logged in 
+When the admin needs to generate the data 
+And no_of_records specified should be miniumum 1 and maximum 10,00,000 
+And credit_card number to to be taken from the registered list of number which is registered by customer
+And validate the credit_card number
+And the credit_card to be randomized 
+And the tr_id should be a running serial number from the last indexed number from the DB 
+	tr_id -should be between 6 & 25 chars 
+				   - only numbers 
+				   - should not be -ve digit 
+And tr_amount can be +ve or -ve  should be random number between (-1,00,000 to 1,00,000) 
+But the value should not be 0 
+	tr_amount - should be digit 
+When the tr_amount is -ve then the transaction type should be DB 
+When the tr_amount is +ve then the transaction type should be CR 
+	tr_type - DB/CR 
+And tr_mode value should be ONLINE/POS/ATM ensure all the values should be there with maximum ratio between 1:3 
+	tr_mode - ONLINE/POS/ATM
+And merchant_id to be generate as random number 
+	merchant_id - should be between 6 & 12 chars 
+				   - Alpha numberic
+				   - should not accept special characters 
+And first_name and last_name to be generate from external API like https://randomuser.me/
+	first_name - shoule be between 5 & 20 chars
+	last_name - shoule be between 5 & 20 chars
+And expiry date should be random month
+And the date should be 10 years from the date of generation
+	expiry - future date 
+And trasnaction_date - should not be over 1 week from the day of processing 
+					 - should be in  the format -dd/MM/yyyy
+And transaction_time - time should be in 24 Hr Format 
+					 - dd:mm:ss 
+And transaction_location to be generated from external site like  http://names.drycodes.com/
+transaction_location - char between 7 & 20 characters 
+					     - to accept only alphabets 
+And the ip address should be generate based on the input the user can specify Type A or B or C or D 
+	transaction_id - validate a ipv4 
+And transaction_status - SUCCESS/FAILED/PENDING 
+When invoked the application should generate a .csv file with the condition given  
+But the user can specify maximum valid of 2 (which is %) to generate invalid records which should have invalid records of missing or invalid data of any of the field specified ot the % of numbers 
+And the % specification of values can be floating point number 
+
+
+
+14. User Story: create a multi module application and writing test cases for controller and services for performing simple CRUD operation with the smiple HelloWorld bean 
+AC: 
+--------------------------------------------------------
+Given the application is written the class which is service layer 
+When the code is found 
+Then the application should the test cases for the service layer 
+Given the application is written the class which is controller
+When the code is found 
+Then the application should the test cases for the controller 
+
+--------------------------------------------------------
+
+15. User Story: When the applicaiton is written the same application has check for the valid test cased and code coverage report to be generated, for the same setup sonar qube for the application and the code coverage to be reflected in the:  https://tools.publicis.sapient.com/sonar/. 
+
+--------------------------------------------------------
+
+
+16. Create a pipeline where the code is kept in BitBucket, the build should be done on the remote system with ip address 10.150.223.240
+, and the application should be invoked.  from any system which has VPN access to that IP : 10.150.223.240, the the multi module application with POSTMAN
+
+
+--------------------------------------------------------
+
+
+17. User Story: when customer wants to view last month maximum expenses of all the cards 
+AC:
+--------------------------------------------------------
+Given the end point POST /api/customer/login 
+When customer logs in successfylly and the JWT token is generated 
+And pass the JWT token in the header 
+When the customer logs in with valid credentials 
+Given the end point GET /api/customer/creditcards/lastmonth/max 
+When the customer has successfully logged in 
+Then show the maximum expenses for the last month from current month for the below data model shown 
+[
+	{
+		credit_card: xxxx.xxxx.xxxx.xxxx, 
+		month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+		amount : xxxxxx
+	}, 
+	{
+		credit_card: xxxx.xxxx.xxxx.xxxx, 
+		month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+		amount : xxxxxx
+	}, 
+	{
+		credit_card: xxxx.xxxx.xxxx.xxxx, 
+		month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+		amount : xxxxxx
+	} 
+	
+]
+
+
+18. User Story: when customer wants to view last month maximum expenses of all the cards 
+AC:
+--------------------------------------------------------
+Given the end point POST /api/customer/login 
+When customer logs in successfylly and the JWT token is generated 
+And pass the JWT token in the header 
+When the customer logs in with valid credentials 
+Given the end point GET /api/customer/creditcards/lastmonth/max 
+When the customer has successfully logged in 
+Then show the maximum expenses for the last month from current month for the below data model shown 
+[
+	{
+		credit_card: xxxx.xxxx.xxxx.xxxx, 
+		month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+		amount : xxxxxx, 
+		merchant: <details/desctiption>
+	}, 
+	{
+		credit_card: xxxx.xxxx.xxxx.xxxx, 
+		month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+		amount : xxxxxx, 
+		merchant: <details/desctiption>
+	}, 
+	{
+		credit_card: xxxx.xxxx.xxxx.xxxx, 
+		month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+		amount : xxxxxx, 
+		merchant: <details/desctiption>		
+	} 
+]
+
+
+
+19. User Story: when customer wants to view last "x" number of expenses of all cards 
+AC:
+--------------------------------------------------------
+Given the end point POST /api/customer/login 
+When customer logs in successfylly and the JWT token is generated 
+And pass the JWT token in the header 
+When the customer logs in with valid credentials 
+Given the end point GET /api/customer/creditcards/expenses?transactions=xx
+When the customer has successfully logged in 
+Then show the maximum expenses for the last month from current month for the below data model shown 
+[
+
+	{		
+		credit_card: xxxx.xxxx.xxxx.xxxx, 
+	[
+		{
+			month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+			amount : xxxxxx, 
+			description: <description>
+		}, 
+		{
+			month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+			amount : xxxxxx, 
+			description: <description>
+		}, 
+		{
+			month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+			amount : xxxxxx, 
+			description: <description>
+		}
+	]
+	}, 
+
+	{		
+		credit_card: xxxx.xxxx.xxxx.xxxx, 
+	[
+		{
+			month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+			amount : xxxxxx, 
+			description: <description>
+		}, 
+		{
+			month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+			amount : xxxxxx, 
+			description: <description>
+		}, 
+		{
+			month:JAN/FEB/MAR/APR/MAY/JUN/JUL/AUG/SEP/OCT/DEC, 
+			amount : xxxxxx, 
+			description: <description>
+		}
+	]
+	}
+]
+
+
+
+
+20. User Story: list the transaction based on description spent 
+AC:
+----------------------------------------------------------------
+Given the end point POST /api/customer/login 
+When the customer logs in with valid credentials 
+When customer logs in successfylly and the JWT token is generated 
+When invoke the end point GET /api/customer/creditcard/expenses?description=xxxxxxxxx?page=1
+And pass the JWT token in the header 
+Then list all the transaction based on the transaction description on the descending order of the transaction date 
+And maximum 10 trsnaction to be showed at a time 
+
+
+
+21. User Story: list the expenses more than the amount of expenses 
+AC:
+---------------------------------------------------------------
+Given the end point POST /api/customer/login 
+When the customer logs in with valid credentials 
+When customer logs in successfylly and the JWT token is generated 
+When invoke the end point GET /api/customer/creditcard/expenses?amount=xxxx
+And pass the JWT token in the header 
+Then the list of all the transaction to be shown in descending order of maximumm expenses from the current date 
+And maximum of 10 transaction to be shown 
+
+
+
+
+
+
+
+22. User Story: add a credit card to the customer - valid case 
+AC:
+---------------------------------------------------------------
+Given the end point POST /api/customer/
+When the customer logs in with valid credentials 
+When customer logs in successfylly and the JWT token is generated 
+When invoke the end point POST g/api/customer/creditcard/
+And pass the JWT token in the header 
+Then in the body the new credit card can be added to the customer with below data model 
+{
+	credit_card_no:xxxx.xxxx.xxxx.xxxx, 
+	cvv:xxx, 
+	exp:yy/mm 
+}
+Then the acknowledgment to be given as "card added successfully"
+
+
+
+23. User story: to delete the credit card from the customer (soft delete) - valid case 
+AC: 
+---------------------------------------------------------------
+Given the end point POST /api/customer/
+When the customer logs in with valid credentials 
+When customer logs in successfylly and the JWT token is generated 
+When invoke the end point DELETE g/api/customer/creditcard/{card number}
+And pass the JWT token in the header 
+When the credit card exists 
+Then the an acknowledgement is given "Card deleted sucessfully"
+But the record should not be delete rather it should be managed with flag 
+And the any other information with this card should not be shown 
 
 
 
