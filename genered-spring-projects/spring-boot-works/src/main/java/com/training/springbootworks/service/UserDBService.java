@@ -46,6 +46,7 @@ public class UserDBService {
 	}
 
 	public void deleteUserById(Integer id) {
+		System.out.println("in service to Delet " + id);
 		this.repo.deleteById(id);
 	}
 
