@@ -14,7 +14,9 @@ bin/**
 **/project/**
 **/genered-spring-projects/**
 
-
+**/evaluation/**
+**/project/**
+**/runner/** 
 
 workspace/.metadata/**
 **/.plugins/**
