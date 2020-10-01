@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script>
+    <script type="text/javascript">
       function validate() {
         var name = document.myform.name.value;
 
@@ -22,19 +22,27 @@
           document.getElementById("passdiv").innerHTML = "";
         }
 
-        document.getElementById("namediv").innerHTML = "";
-        document.getElementById("passdiv").innerHTML = "";
+        // console.log("after... ");
+        // document.getElementById("namediv").innerHTML = "";
+        // document.getElementById("passdiv").innerHTML = "";
         alert("Form Submitted Successfully");
         return true;
+      }
+
+      function fnClear(field) {
+        console.log(field);
+        document.getElementById(field).innerHTML = "";
       }
     </script>
   </head>
   <body>
     <form name="myform" onsubmit="return validate()">
-      Enter Your Name <input type="text" name="name" />
+      Enter Your Name
+      <input type="text" name="name" onblur="fnClear('namediv')" />
       <div id="namediv" style="color: red"></div>
       <br />
-      Enter Password <input type="password" name="password" />
+      Enter Password
+      <input type="password" name="password" onblur="fnClear('passdiv')" />
       <div id="passdiv" style="color: red"></div>
       <br />
       <input type="submit" value="Login" />
