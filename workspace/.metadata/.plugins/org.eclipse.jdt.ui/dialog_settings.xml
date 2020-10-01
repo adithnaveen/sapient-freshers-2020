@@ -20,8 +20,8 @@
 		<item key="create_unimplemented" value="true"/>
 	</section>
 	<section name="completion_proposal_size">
-		<item key="size.x" value="747"/>
-		<item key="size.y" value="284"/>
+		<item key="size.x" value="788"/>
+		<item key="size.y" value="342"/>
 		<item key="contextSelector.size.x" value="315"/>
 		<item key="contextSelector.size.y" value="165"/>
 	</section>
@@ -106,8 +106,8 @@
 		<item key="showtypes" value="true"/>
 	</section>
 	<section name="DialogBounds_OverrideMethodDialog">
-		<item key="DIALOG_X_ORIGIN" value="463"/>
-		<item key="DIALOG_Y_ORIGIN" value="107"/>
+		<item key="DIALOG_X_ORIGIN" value="705"/>
+		<item key="DIALOG_Y_ORIGIN" value="86"/>
 		<item key="DIALOG_WIDTH" value="732"/>
 		<item key="DIALOG_HEIGHT" value="661"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
@@ -160,5 +160,8 @@
 		<item key="DIALOG_WIDTH" value="394"/>
 		<item key="DIALOG_HEIGHT" value="455"/>
 		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+	<section name="ClasspathContainerSelectionPage">
+		<item key="index" value="5"/>
 	</section>
 </section>

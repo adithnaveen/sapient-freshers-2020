@@ -95,6 +95,8 @@
 	</section>
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="/Volumes/Kanchan/MyTrainings/sapient-fresher-2020-sep/project/credit-card-processing"/>
+			<item value="/Volumes/Kanchan/MyTrainings/sapient-fresher-2020-sep/genered-spring-projects/docker-example"/>
 			<item value="/Volumes/Kanchan/MyTrainings/sapient-fresher-2020-sep/genered-spring-projects/spring-boot-works"/>
 			<item value="/Volumes/Kanchan/MyTrainings/sapient-fresher-2020-sep/genered-spring-projects/demo"/>
 		</list>
