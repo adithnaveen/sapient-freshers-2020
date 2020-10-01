@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function fnChange() {
+        var ePara = document.getElementsByTagName("p")[0];
+        // <b> Hello World</b>
+
+        var para = document.createElement("b");
+        var text = document.createTextNode("Hello World");
+        para.appendChild(text);
+
+        // document.body.replaceChild(para, ePara);
+        // document.body.insertBefore(para, ePara);
+        document.body.appendChild(para);
+      }
+
+      function fnDiv() {
+        var name = prompt("enter your name ");
+        document.getElementById("mydiv").innerHTML = "<h2>" + name + "</h2>";
+        document.getElementById("mydiv").setAttribute("align", "center");
+        document
+          .getElementById("mydiv")
+          .setAttribute("style", "background-color:cyan");
+      }
+    </script>
+  </head>
+  <body>
+    <p>Java Script</p>
+
+    <button onclick="fnChange()">Fn Change</button>
+    <br />
+    <div id="mydiv"></div>
+    <button onclick="fnDiv()">Div</button>
+  </body>
+</html>

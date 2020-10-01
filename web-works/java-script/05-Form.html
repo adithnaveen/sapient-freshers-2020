@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function validate() {
+        var name = document.myform.name.value;
+
+        if (name.length < 6) {
+          document.getElementById("namediv").innerHTML =
+            "Please Enter min 6 chars for name";
+          return false;
+        } else {
+          document.getElementById("namediv").innerHTML = "";
+        }
+
+        var password = document.myform.password.value;
+        if (password.length < 6) {
+          document.getElementById("passdiv").innerHTML =
+            "Please Enter min 6 chars for password";
+          return false;
+        } else {
+          document.getElementById("passdiv").innerHTML = "";
+        }
+
+        document.getElementById("namediv").innerHTML = "";
+        document.getElementById("passdiv").innerHTML = "";
+        alert("Form Submitted Successfully");
+        return true;
+      }
+    </script>
+  </head>
+  <body>
+    <form name="myform" onsubmit="return validate()">
+      Enter Your Name <input type="text" name="name" />
+      <div id="namediv" style="color: red"></div>
+      <br />
+      Enter Password <input type="password" name="password" />
+      <div id="passdiv" style="color: red"></div>
+      <br />
+      <input type="submit" value="Login" />
+    </form>
+  </body>
+</html>

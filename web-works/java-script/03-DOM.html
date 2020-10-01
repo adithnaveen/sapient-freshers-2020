@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script>
+      function fnGetPara() {
+        var para = document.getElementsByTagName("p")[0];
+        console.log(para);
+        console.log(para.nodeName);
+        console.log(para.firstChild.nodeValue);
+        console.log(para.firstChild.nodeName);
+      }
+
+      function fnGetBgColor() {
+        var color = document.body.getAttribute("bgcolor");
+        console.log(color);
+      }
+
+      function fnSetBGColor(color) {
+        document.body.setAttribute("bgcolor", color);
+      }
+    </script>
+  </head>
+  <body bgcolor="cyan">
+    <p>First Para</p>
+    <button onclick="fnGetPara()">GetPara</button>
+    <button onclick="fnGetBgColor()">Get BG Color</button>
+    <hr />
+    <button onmouseover="fnSetBGColor('blue')">BLUE</button>
+    <button onmouseover="fnSetBGColor('orange')">Orange</button>
+    <button onmouseover="fnSetBGColor('lightblue')">LIGHT BLUE</button>
+    <button onmouseover="fnSetBGColor('grey')">GREY</button>
+  </body>
+</html>
