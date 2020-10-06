@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript">
+
+
+        function display(arr) {
+            console.log("called display");
+            for (temp in arr) {
+
+                console.log(arr[temp].id);
+            }
+        }
+
+
+        function fnAjaxCall() {
+            var url = "https://jsonplaceholder.typicode.com/todos"
+            var xmlhttp = new XMLHttpRequest();
+            console.log("Called... ");
+
+            xmlhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var myarry = JSON.parse(this.responseText)
+                    console.log(myarry);
+                    display(myarry)
+                } else {
+                    console.log("in else ");
+                }
+            }
+            console.log("Called... 1");
+            xmlhttp.open("GET", url, false)
+            xmlhttp.send();
+
+        }
+
+
+    </script>
+
+</head>
+
+<body>
+    <button onclick="fnAjaxCall()"> Call Ajax</button>
+</body>
+
+</html>
