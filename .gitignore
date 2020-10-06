@@ -13,6 +13,7 @@ bin/**
 **/node_modules/**
 **/project/**
 **/genered-spring-projects/**
+/evaluation/**
 
 **/evaluation/**
 **/project/**
