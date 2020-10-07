@@ -9,7 +9,7 @@
             console.log("called display");
             for (temp in arr) {
 
-                console.log(arr[temp].id);
+                console.log(arr[temp].title);
             }
         }
 
@@ -22,7 +22,7 @@
             xmlhttp.onreadystatechange = function () {
                 if (this.readyState == 4 && this.status == 200) {
                     var myarry = JSON.parse(this.responseText)
-                    console.log(myarry);
+
                     display(myarry)
                 } else {
                     console.log("in else ");
