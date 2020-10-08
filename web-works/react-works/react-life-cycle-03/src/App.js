@@ -11,7 +11,7 @@ class App extends Component {
     let output = null;
     if (this.state.showCounterApp === true) {
       output = <CounterApp title={this.state.title} />
-    }
+    } 
     return (
 
       <div className="container">
