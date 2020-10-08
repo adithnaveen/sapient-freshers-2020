@@ -15,7 +15,7 @@ bin/**
 **/genered-spring-projects/**
 /evaluation/**
 
-**/evaluation/**
+evaluation/**
 **/project/**
 **/runner/** 
 
