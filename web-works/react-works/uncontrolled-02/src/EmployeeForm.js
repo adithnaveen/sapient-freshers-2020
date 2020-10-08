@@ -81,6 +81,10 @@ class EmployeeForm extends Component {
 
 	// as soon as you call set state the render method will be called.          
    this.setState({errorMessages}); 
+
+
+            
+
         }
     }
 
