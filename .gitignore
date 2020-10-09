@@ -18,6 +18,7 @@ bin/**
 evaluation/**
 **/project/**
 **/runner/** 
+workspace/** 
 
 workspace/.metadata/**
 **/.plugins/**
