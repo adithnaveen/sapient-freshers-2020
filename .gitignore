@@ -20,7 +20,7 @@ evaluation/**
 **/project/**
 **/runner/** 
 
-**/terraform-works/** 
+terraform-works/** 
 
 workspace/.metadata/**
 **/.plugins/**
