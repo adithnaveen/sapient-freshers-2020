@@ -1,0 +1,114 @@
+ 
+------------------------------------------
+nav-vpc => 10.50.0.0/16
+nav-public => 10.50.1.0/24 (assign public IP)
+nav-private => 10.50.2.0/24
+nav-rt => 
+nav-ig => 
+nav-pri-sg=> 
+
+
+
+
+
+
+
+
+
+
+
+1. AWS 
+	
+VPC - cct-vpc-  20.50.0.0/16 
+RT - cct-rt - 0.0.0.0/0
+IG - cct-ig
+SubNet - Private  (cct-pri-subnet)- 20.50.1.0/24
+	- 
+SubNet - Public - (cct-pub-subnet)- 20.50.2.0/24
+	-
+Security Group - Private - cct-sg-pri  -
+Security Group - Public - cct-sg-pub 
+	
+public System - cct-public-ec2
+private System - cct-private-ec2
+
+
+2. Terraform (IAAS)
+
+AWS Azure GCP 
+
+
+Code 
+
+Steps : 
+1) 
+> aws configure
+
+or 
+
+> ~/.aws/config (Region)
+> ~/.aws/credentials (credentials)
+
+2) create a file 
+3) terraform init 
+4) terraform plan
+
+
+example.tf 
+-------------------------------------------
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 2.70"
+    }
+  }
+}
+
+provider "aws" {
+  profile = "default"
+  region  = "us-east-1"
+}
+
+resource "aws_instance" "example" {
+  ami           = "ami-0947d2ba12ee1ff75"
+  instance_type = "t2.micro"
+}
+
+
+resource "aws_security_group" "prod_web" {
+
+  name              = "prod_web"
+  description       ="Production version security group"
+  ingress {
+      from_port       = 80
+      to_port         = 80 
+      protocol        = "tcp"
+      cidr_blocks     = ["15.50.0.0/16"]
+  }
+  ingress {
+      from_port       = 443
+      to_port         = 443 
+      protocol        = "tcp"
+      cidr_blocks     = ["15.50.0.0/16"]
+  }
+ egress {
+      from_port       = 0
+      to_port         = 0 
+      protocol        = "-1"
+      cidr_blocks     = ["15.50.0.0/16"]
+  }
+  tags  ={
+    "terraform" :"true"
+  }
+
+}
+
+
+> terraform apply 
+> terraform destory 
+> terraform graph 
+> http://webgraphviz.com/
+
+
+ 
