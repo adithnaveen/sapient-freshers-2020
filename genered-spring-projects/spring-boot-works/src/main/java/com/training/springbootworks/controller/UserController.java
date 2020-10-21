@@ -5,6 +5,8 @@ package com.training.springbootworks.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -22,21 +24,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.databind.ser.FilterProvider;
 import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
-import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter.FilterExceptFilter;
 import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.training.springbootworks.beans.User;
 import com.training.springbootworks.exception.UserNotFoundException;
 import com.training.springbootworks.service.UserDBService;
 
+import lombok.extern.java.Log;
+
 @RestController
 @RequestMapping("/api")
 public class UserController {
 
+	private Logger logger = LoggerFactory.getLogger(UserController.class); 
+	
 	@Autowired
 	private UserDBService service;
 
 	@GetMapping(path = "/db/users")
 	public List<User> getAllUsersFromDB() {
+		logger.info("all users fetch : {}", service.getAllUsers());
+		
 		return service.getAllUsers();
 	}
 
@@ -54,6 +61,7 @@ public class UserController {
 			FilterProvider userFilter = new SimpleFilterProvider().addFilter("UserFilter", filter);
 
 			User user = this.service.getUserByIdAsObject(id);
+			logger.info("Geeting user {}", user);
 
 			MappingJacksonValue mapping = new MappingJacksonValue(user);
 
@@ -66,6 +74,7 @@ public class UserController {
 		} catch (UserNotFoundException e) {
 			e.printStackTrace();
 			// partial delegation
+			logger.debug("error from contrroller user not found ", e.toString());
 			throw new UserNotFoundException("From Controller the user Not Found : " + e.toString());
 
 		}

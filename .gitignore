@@ -15,6 +15,7 @@ bin/**
 **/genered-spring-projects/**
 /evaluation/**
 **/target/** 
+ workspace/.metadata/**
 
 evaluation/**
 **/project/**

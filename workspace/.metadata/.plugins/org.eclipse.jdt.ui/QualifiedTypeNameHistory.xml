@@ -1,21 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="lombok.ToString"/>
-    <fullyQualifiedTypeName name="org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ControllerAdvice"/>
-    <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="java.util.Date"/>
-    <fullyQualifiedTypeName name="com.training.springbootworks.exception.UserNotFoundException"/>
-    <fullyQualifiedTypeName name="org.springframework.web.bind.MethodArgumentNotValidException"/>
-    <fullyQualifiedTypeName name="java.net.http.HttpHeaders"/>
-    <fullyQualifiedTypeName name="org.springframework.web.context.request.WebRequest"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="com.training.springbootworks.exception.model.ExceptionResponse"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ExceptionHandler"/>
     <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
     <fullyQualifiedTypeName name="org.springframework.hateoas.EntityModel"/>
     <fullyQualifiedTypeName name="org.springframework.hateoas.server.mvc.ControllerLinkBuilder"/>
-    <fullyQualifiedTypeName name="com.training.springbootworks.controller.UserController"/>
     <fullyQualifiedTypeName name="lombok.AccessLevel"/>
     <fullyQualifiedTypeName name="lombok.Data"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
@@ -60,4 +50,14 @@
     <fullyQualifiedTypeName name="org.apache.commons.io.FileUtils"/>
     <fullyQualifiedTypeName name="com.training.utils.CaptureScreenShot"/>
     <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="org.junit.runner.RunWith"/>
+    <fullyQualifiedTypeName name="cucumber.api.junit.Cucumber"/>
+    <fullyQualifiedTypeName name="cucumber.api.CucumberOptions"/>
+    <fullyQualifiedTypeName name="cucumber.api.DataTable"/>
+    <fullyQualifiedTypeName name="cucumber.api.java.Before"/>
+    <fullyQualifiedTypeName name="cucumber.api.java.After"/>
+    <fullyQualifiedTypeName name="org.slf4j.Logger"/>
+    <fullyQualifiedTypeName name="org.slf4j.LoggerFactory"/>
+    <fullyQualifiedTypeName name="com.training.springbootworks.controller.UserController"/>
+    <fullyQualifiedTypeName name="lombok.extern.java.Log"/>
 </qualifiedTypeNameHistroy>

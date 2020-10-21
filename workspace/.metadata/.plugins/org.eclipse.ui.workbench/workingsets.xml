@@ -13,11 +13,6 @@
 <item elementID="=review/src\/test\/java=/optional=/true=/=/maven.pomderived=/true=/=/test=/true=/" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=review/src\/test\/resources=/maven.pomderived=/true=/=/test=/true=/" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
-<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1601460184168_3" label="credit-card-processor" name="credit-card-processor">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/admin" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/customer" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/credit-card-processor" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/transaction" type="4"/>
-</workingSet>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1601460184168_3" label="credit-card-processor" name="credit-card-processor"/>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1599455833893_2" label="Window Working Set" name="Aggregate for window 1599455833892"/>
 </workingSetManager>
